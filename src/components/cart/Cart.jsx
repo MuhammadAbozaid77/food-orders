@@ -3,13 +3,13 @@ import CartItems from "./CartItems";
 import CartTotal from "./CartTotal";
 
 //
-export default function Cart() {
+export default function Cart({ setShowForm, cartArray }) {
   return (
     <>
       <div className="p-5">
         <CartHead />
-        <CartItems />
-        <CartTotal />
+        <CartItems cartArray={cartArray} />
+        <CartTotal setShowForm={setShowForm} />
       </div>
     </>
   );

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Cart from "./components/cart/Cart";
 import Category from "./components/category/Category";
 import FormPopUp from "./components/formPopUp/FormPopUp";
@@ -6,6 +7,15 @@ import TableShow from "./components/tableshow/TableShow";
 
 //
 export default function AppLayout() {
+  const [showForm, setShowForm] = useState(false);
+  const [cartArray, setCartArray] = useState([
+    {
+      productName: "Pizza",
+      productPrice: "$125",
+      productNumber: 5,
+      productPic: "",
+    },
+  ]);
   return (
     <>
       <div className="min-h-[100vh] w-[100%] flex justify-between relative">
@@ -18,11 +28,13 @@ export default function AppLayout() {
           <TableShow />
         </div>
         <div className="w-[600px] bg-slate-100">
-          <Cart />
+          <Cart setShowForm={setShowForm} cartArray={cartArray} />
         </div>
-        <div className="absolute inset-0 bg-black/50 flex justify-center pt-[100px]">
-          <FormPopUp />
-        </div>
+        {showForm && (
+          <div className="absolute inset-0 bg-black/50 flex justify-center pt-[100px]">
+            <FormPopUp setShowForm={setShowForm} />
+          </div>
+        )}
       </div>
     </>
   );
