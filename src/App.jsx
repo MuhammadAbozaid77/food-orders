@@ -1,12 +1,12 @@
-// import AppLayout from "./AppLayout";
-import StarsRating from "./components/OthersComponents/StarsRating";
+import AppLayout from "./AppLayout";
+
+// import NewShoppingCart from "./components2/NewShoppingCart";
 
 export default function App() {
   return (
     <>
-      {/* <AppLayout /> */}
-
-      <StarsRating maxRating={10} />
+      <AppLayout />
+      {/* <NewShoppingCart /> */}
     </>
   );
 }

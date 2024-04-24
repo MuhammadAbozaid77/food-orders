@@ -9,12 +9,12 @@ import TableShow from "./components/tableshow/TableShow";
 export default function AppLayout() {
   const [showForm, setShowForm] = useState(false);
   const [cartArray, setCartArray] = useState([
-    {
-      productName: "Pizza",
-      productPrice: "$125",
-      productNumber: 5,
-      productPic: "",
-    },
+    // {
+    //   productName: "Pizza",
+    //   productPrice: "$125",
+    //   productNumber: 5,
+    //   productPic: "",
+    // },
   ]);
   return (
     <>
