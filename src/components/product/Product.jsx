@@ -7,7 +7,7 @@ export default function Product({ productsData, handelSelectProduct }) {
       <h1 className="mb-2 font-semibold text-[25px] mt-8">
         Categories Products
       </h1>
-      <div className="grid grid-cols-3 gap-5">
+      <div className="flex gap-3 flex-wrap lg:justify-start justify-center">
         {productsData?.map((item, index) => (
           <ProductItem
             item={item}

@@ -1,5 +1,9 @@
 //
-export default function CartItems({ cartArray }) {
+export default function CartItems({
+  cartArray,
+  handelIncreaseProduct,
+  handelDescreaseProduct,
+}) {
   return (
     <>
       <div className="my-8">
@@ -18,13 +22,19 @@ export default function CartItems({ cartArray }) {
             </div>
 
             <div className="w-[120px] h-[70px] flex justify-between items-center">
-              <span className="cursor-pointer w-[30px] h-[30px] border p-1 flex justify-center items-center bg-black text-white rounded">
+              <span
+                className="cursor-pointer w-[30px] h-[30px] border p-1 flex justify-center items-center bg-black text-white rounded"
+                onClick={() => handelDescreaseProduct(el)}
+              >
                 -
               </span>
               <span className="w-[30px] h-[30px] mx-2 p-1 flex justify-center items-center text-[20px]">
-                1
+                {el.quantity}
               </span>
-              <span className="cursor-pointer w-[30px] h-[30px] border p-1 flex justify-center items-center bg-orange-600 text-white rounded">
+              <span
+                className="cursor-pointer w-[30px] h-[30px] border p-1 flex justify-center items-center bg-orange-600 text-white rounded"
+                onClick={() => handelIncreaseProduct(el)}
+              >
                 +
               </span>
             </div>
