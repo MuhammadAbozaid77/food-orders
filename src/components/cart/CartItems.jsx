@@ -1,19 +1,18 @@
 //
-import pic from "./../../assets/pics/Chili_dog_with_fries.jpg";
 export default function CartItems({ cartArray }) {
   return (
     <>
       <div className="my-8">
         {cartArray.map((el, index) => (
-          <div className="flex items-center" key={index}>
+          <div className="flex items-center border-b" key={index}>
             <div className="w-[100%] flex  justify-between items-center">
               <div className="h-[70px] ">
-                <img src={pic} alt="" className="h-[100%] rounded-lg" />
+                <img src={el.pic} alt="" className="h-[100%] rounded-lg" />
               </div>
               <div className="h-[70px] w-[200px] flex justify-center flex-col mx-2">
-                <h6 className="font-semibold"> {el.productName} </h6>
+                <h6 className="font-semibold"> {el.name} </h6>
                 <h1 className="text-orange-500 font-bold text-[20px]">
-                  {el.productPrice}
+                  $ {el.price}
                 </h1>
               </div>
             </div>

@@ -4,6 +4,7 @@ import CartTotal from "./CartTotal";
 
 //
 export default function Cart({ setShowForm, cartArray }) {
+  console.log(cartArray);
   return (
     <>
       <div className="p-5">

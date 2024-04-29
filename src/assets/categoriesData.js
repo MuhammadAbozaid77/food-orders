@@ -4,6 +4,28 @@ import hotdogs from "./pics/category/hot dogs.png";
 import ramen from "./pics/category/ramen.png";
 import sandwish from "./pics/category/sandwish.png";
 import sushi from "./pics/category/sushi.png";
+
+//
+import burgerPic1 from "./pics/burger/burge.png";
+import cheeseBurger from "./pics/burger/cheeseburger.jpg";
+import fishBurger from "./pics/burger/fish-burger.jpg";
+//
+import coneyHotDog from "./pics/hot-dog/coney.png";
+import italianHotDog from "./pics/hot-dog/italian.png";
+//
+import Margherita from "./pics/pizza/margherita-pizza.png";
+import Mexican from "./pics/pizza/mexican-pizza.png";
+import Pepperoni from "./pics/pizza/pepperoni-pizza.png";
+import Seafood from "./pics/pizza/seafood-pizza.jpeg";
+//
+import Misco from "./pics/ramen/misco ramen.jpg";
+import PorkBone from "./pics/ramen/pork bone.jpeg";
+import Salt from "./pics/ramen/salt ramen.jpeg";
+// Maki
+import Maki from "./pics/sushi/maki-sushi.jpg";
+import Temaki from "./pics/sushi/temaki-sushi.jpg";
+import Uramaki from "./pics/sushi/uramaki-sushi.png";
+
 export const categoriesData = [
   {
     name: "pizza",
@@ -14,7 +36,7 @@ export const categoriesData = [
     pic: burger,
   },
   {
-    name: "hot dogs",
+    name: "hot-dogs",
     pic: hotdogs,
   },
   {
@@ -22,11 +44,100 @@ export const categoriesData = [
     pic: ramen,
   },
   {
-    name: "sandwish",
-    pic: sandwish,
-  },
-  {
     name: "sushi",
     pic: sushi,
+  },
+];
+
+export const productsJson = [
+  {
+    category: "burger",
+    name: "Burger",
+    pic: burgerPic1,
+    price: "20",
+  },
+  {
+    category: "burger",
+    name: "Cheese Burger",
+    pic: cheeseBurger,
+    price: "25",
+  },
+  {
+    category: "burger",
+    name: "Fish Burger",
+    pic: fishBurger,
+    price: "22",
+  },
+  {
+    category: "hot-dogs",
+    name: "Coney Hot-Dog",
+    pic: coneyHotDog,
+    price: "18",
+  },
+  {
+    category: "hot-dogs",
+    name: "Italian Hot-Dog",
+    pic: italianHotDog,
+    price: "15",
+  },
+  {
+    category: "pizza",
+    name: "Margherita Pizza",
+    pic: Margherita,
+    price: "40",
+  },
+  {
+    category: "pizza",
+    name: "Mexican Pizza",
+    pic: Mexican,
+    price: "45",
+  },
+  {
+    category: "pizza",
+    name: "Pepperoni Pizza",
+    pic: Pepperoni,
+    price: "60",
+  },
+  {
+    category: "pizza",
+    name: "Seafood Pizza",
+    pic: Seafood,
+    price: "60",
+  },
+  {
+    category: "ramen",
+    name: "Misco Ramen",
+    pic: Misco,
+    price: "8",
+  },
+  {
+    category: "ramen",
+    name: "Pork Bone Ramen",
+    pic: PorkBone,
+    price: "12",
+  },
+  {
+    category: "ramen",
+    name: "Salt Ramen",
+    pic: Salt,
+    price: "14",
+  },
+  {
+    category: "sushi",
+    name: "Maki Sushi",
+    pic: Maki,
+    price: "30",
+  },
+  {
+    category: "sushi",
+    name: "Temaki Sushi",
+    pic: Temaki,
+    price: "30",
+  },
+  {
+    category: "sushi",
+    name: "Uramaki Sushi",
+    pic: Uramaki,
+    price: "32",
   },
 ];

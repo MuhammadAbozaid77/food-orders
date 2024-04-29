@@ -1,5 +1,5 @@
 //
-export default function CartTotal({setShowForm}) {
+export default function CartTotal({ setShowForm }) {
   return (
     <>
       <div className="flex justify-between items-center px-5">
@@ -7,7 +7,10 @@ export default function CartTotal({setShowForm}) {
         <span className="font-bold text-[25px] text-orange-600">$144</span>
       </div>
       <div className="my-5 flex justify-center">
-        <button className="w-[100%] bg-slate-800 text-white p-2 rounded-lg text-[20px]" onClick={()=>setShowForm(true)} >
+        <button
+          className="w-[100%] bg-slate-800 text-white p-2 rounded-lg text-[20px]"
+          // onClick={()=>setShowForm(true)}
+        >
           CheckOut
         </button>
       </div>
