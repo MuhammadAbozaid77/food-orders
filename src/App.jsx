@@ -1,12 +1,10 @@
-import AppLayout from "./AppLayout";
-
-// import NewShoppingCart from "./components2/NewShoppingCart";
+// import AppLayout from "./AppLayout";
+import AppProviders from "./layout/AppProviders";
 
 export default function App() {
   return (
     <>
-      <AppLayout />
-      {/* <NewShoppingCart /> */}
+      <AppProviders />
     </>
   );
 }

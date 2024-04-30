@@ -11,7 +11,7 @@ import Footer from "./components/footer/Footer";
 export default function AppLayout() {
   const [showForm, setShowForm] = useState(false);
   const [showCart, setShowCart] = useState(false);
-  const [showCategory, setShowCategory] = useState(null);
+  const [showCategory, setShowCategory] = useState("category");
   const [selectedCategory, setSelectedCategory] = useState("pizza");
   const [productsData, setProductsData] = useState([]);
   const [cartArray, setCartArray] = useState([]);
