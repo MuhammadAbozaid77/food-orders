@@ -8,7 +8,7 @@ export default function CartTotal({ setShowForm, total }) {
       </div>
       <div className="my-5 flex justify-center">
         <button
-          className="w-[100%] bg-slate-800 text-white p-2 rounded-lg text-[20px]"
+          className="w-[100%] bg-[#c52e10]  text-white p-2 rounded-lg text-[20px]"
           // onClick={()=>setShowForm(true)}
         >
           CheckOut

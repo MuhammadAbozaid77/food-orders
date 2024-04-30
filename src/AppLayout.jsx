@@ -6,10 +6,12 @@ import Product from "./components/product/Product";
 import TableShow from "./components/tableshow/TableShow";
 import { productsJson } from "./assets/categoriesData";
 import Header from "./components/header/Header";
+import Footer from "./components/footer/Footer";
 
 export default function AppLayout() {
   const [showForm, setShowForm] = useState(false);
   const [showCart, setShowCart] = useState(false);
+  const [showCategory, setShowCategory] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("pizza");
   const [productsData, setProductsData] = useState([]);
   const [cartArray, setCartArray] = useState([]);
@@ -27,7 +29,6 @@ export default function AppLayout() {
           obj.id === args.id ? { ...obj, quantity: obj.quantity + 1 } : obj
         )
       );
-      console.log("Cantttttt");
     } else {
       setCartArray((prev) => [...prev, { ...args, quantity: 1 }]);
     }
@@ -69,6 +70,10 @@ export default function AppLayout() {
     setTotal(totalPrice);
   };
 
+  const handelShowNavbar = (args) => {
+    setShowCategory(args);
+  };
+
   useEffect(() => {
     handelSelectedCat(selectedCategory);
   }, [selectedCategory]);
@@ -80,26 +85,42 @@ export default function AppLayout() {
   return (
     <>
       <div className="min-h-[100vh] w-[100%] flex justify-between relative">
-        <div className="w-[100%] bg-white lg:px-[80px] lg:py-[4 0px] p-[20px]">
-          <Header total={total} cartArray={cartArray?.length} />
-          <Category
-            setSelectedCategory={setSelectedCategory}
-            selectedCategory={selectedCategory}
+        <div className="w-[100%] bg-white lg:px-[80px] lg:pt-[40px] px-[20px]">
+          <Header
+            total={total}
+            cartArray={cartArray?.length}
+            handelShowNavbar={handelShowNavbar}
+            setShowCart={setShowCart}
           />
-          <Product
-            productsData={productsData}
-            handelSelectProduct={handelSelectProduct}
-          />
-          {/* <TableShow /> */}
+          {showCategory === "category" && (
+            <>
+              <Category
+                setSelectedCategory={setSelectedCategory}
+                selectedCategory={selectedCategory}
+              />
+              <Product
+                productsData={productsData}
+                handelSelectProduct={handelSelectProduct}
+              />
+            </>
+          )}
+
+          {showCategory === "orders" && (
+            <>
+              <TableShow />
+            </>
+          )}
+          <Footer />
         </div>
         {showCart && (
-          <div className="w-[500px] bg-slate-100 fixed right-0 bottom-0 top-0">
+          <div className="w-[500px] bg-slate-100 fixed right-0 bottom-0 top-0 border-slate-300 border-[3px]">
             <Cart
               setShowForm={setShowForm}
               cartArray={cartArray}
               handelIncreaseProduct={handelIncreaseProduct}
               handelDescreaseProduct={handelDescreaseProduct}
               total={total}
+              setShowCart={setShowCart}
             />
           </div>
         )}
