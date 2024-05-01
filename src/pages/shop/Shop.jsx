@@ -1,4 +1,9 @@
+import { useContext } from "react";
+import { AppContextSlice } from "../../context/AppContext";
+
 //
 export default function Shop() {
-  return <div>Shop</div>;
+  const data = useContext(AppContextSlice);
+
+  return <div>{data.quantity}</div>;
 }

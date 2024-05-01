@@ -20,7 +20,11 @@ export default function Navbar() {
     <>
       <ul className="flex justify-center items-center gap-3">
         {navbarLinks.map((el, index) => (
-          <Link to={el.path} key={index} className="capitalize text-[18px]">
+          <Link
+            to={el.path}
+            key={index}
+            className="capitalize text-[18px] font-semibold"
+          >
             {el.name}
           </Link>
         ))}
