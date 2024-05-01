@@ -2,7 +2,6 @@ import pizza from "./pics/category/pizza.png";
 import burger from "./pics/category/burger.png";
 import hotdogs from "./pics/category/hot dogs.png";
 import ramen from "./pics/category/ramen.png";
-import sandwish from "./pics/category/sandwish.png";
 import sushi from "./pics/category/sushi.png";
 
 //

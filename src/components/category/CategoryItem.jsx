@@ -1,8 +1,9 @@
-export default function CategoryItem({
-  item,
-  setSelectedCategory,
-  selectedCategory,
-}) {
+import { useContext } from "react";
+import { AppContextSlice } from "../../context/AppContext";
+
+export default function CategoryItem({ item }) {
+  const { setSelectedCategory, selectedCategory } = useContext(AppContextSlice);
+
   return (
     <>
       <div
@@ -18,7 +19,7 @@ export default function CategoryItem({
         </div>
         <div
           className={` ${
-            selectedCategory === item.name ? "bg-[#c52e10]" : "bg-[#872815]"
+            selectedCategory === item.name ? "bg-[#c52510]" : "bg-gray-500"
           } h-[100%] flex justify-center items-center font-bold capitalize text-gray-100 text-[22px]   hover:bg-[#c52e10] duration-150`}
         >
           <h3> {item.name} </h3>

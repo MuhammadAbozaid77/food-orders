@@ -1,8 +1,16 @@
 //
 import ProductItem from "./ProductItem";
 import { MdFastfood } from "react-icons/md";
+import { useContext, useEffect } from "react";
+import { AppContextSlice } from "../../context/AppContext";
 
-export default function Product({ productsData, handelSelectProduct }) {
+export default function Product() {
+  const { productsData, handelSelectedCat, selectedCategory } =
+    useContext(AppContextSlice);
+  useEffect(() => {
+    handelSelectedCat(selectedCategory);
+  }, [selectedCategory]);
+
   return (
     <>
       <div className="flex justify-start gap-3 items-center mt-10">
@@ -15,11 +23,7 @@ export default function Product({ productsData, handelSelectProduct }) {
       </div>
       <div className="flex gap-3 flex-wrap lg:justify-start justify-center">
         {productsData?.map((item, index) => (
-          <ProductItem
-            item={item}
-            key={index}
-            handelSelectProduct={handelSelectProduct}
-          />
+          <ProductItem item={item} key={index} />
         ))}
       </div>
     </>

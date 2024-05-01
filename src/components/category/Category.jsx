@@ -1,8 +1,8 @@
 //
 import { MdFastfood } from "react-icons/md";
-import { categoriesData } from "./../../assets/categoriesData";
+import { categoriesData } from "../../assets/categoriesData";
 import CategoryItem from "./CategoryItem";
-export default function Category({ setSelectedCategory, selectedCategory }) {
+export default function Category() {
   return (
     <>
       <div className="flex justify-start gap-3 items-center">
@@ -15,12 +15,7 @@ export default function Category({ setSelectedCategory, selectedCategory }) {
       </div>
       <div className="flex lg:justify-start justify-center items-center gap-5 flex-wrap">
         {categoriesData?.map((item, index) => (
-          <CategoryItem
-            item={item}
-            key={index}
-            setSelectedCategory={setSelectedCategory}
-            selectedCategory={selectedCategory}
-          />
+          <CategoryItem item={item} key={index} />
         ))}
       </div>
     </>

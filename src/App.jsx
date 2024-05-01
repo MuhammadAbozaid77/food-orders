@@ -1,6 +1,6 @@
 // import AppLayout from "./AppLayout";
 import AppContextProvider from "./context/AppContext";
-import AppProviders from "./layout/AppProviders";
+import AppProviders from "./Routers/AppProviders";
 
 export default function App() {
   return (
