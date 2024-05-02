@@ -6,10 +6,15 @@ export let AppContextSlice = createContext(0);
 export default function AppContextProvider({ children }) {
   // -------------------------------------------------------------------------------
   const [showCategory, setShowCategory] = useState("category");
+  const [showUserAuth, setShowUserAuth] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState("pizza");
   const [productsData, setProductsData] = useState([]);
   const [cartArray, setCartArray] = useState([]);
   const [total, setTotal] = useState(0);
+  // -------------------------------------------------------------------------------
+  const handelShowUserAuth = () => {
+    setShowUserAuth((prev) => !prev);
+  };
   // -------------------------------------------------------------------------------
   const handelSelectedCat = (args) => {
     const categoryProducts = productsJson.filter((el) => el?.category === args);
@@ -55,6 +60,13 @@ export default function AppContextProvider({ children }) {
     }
   };
 
+  const handelRemoveProduct = (args) => {
+    let cartAfterRempve = cartArray.filter((el) => {
+      return el.id !== args.id;
+    });
+    setCartArray(cartAfterRempve);
+  };
+
   const handelTotal = () => {
     const totalPrice = cartArray.reduce((total, item) => {
       const itemTotal = item.price * item.quantity;
@@ -79,6 +91,9 @@ export default function AppContextProvider({ children }) {
           handelIncreaseProduct,
           handelDescreaseProduct,
           handelTotal,
+          handelRemoveProduct,
+          handelShowUserAuth,
+          showUserAuth,
         }}
       >
         {children}

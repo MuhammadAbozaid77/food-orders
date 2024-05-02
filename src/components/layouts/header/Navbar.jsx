@@ -11,6 +11,10 @@ const navbarLinks = [
     path: "shop",
   },
   {
+    name: "orders",
+    path: "orders",
+  },
+  {
     name: "contact us",
     path: "contact",
   },
