@@ -3,6 +3,7 @@ import { useContext, useEffect } from "react";
 import CartDetails from "../../components/cart/CartDetails";
 import CartItems from "../../components/cart/CartItems";
 import { AppContextSlice } from "../../context/AppContext";
+import { ToastContainer } from "react-toastify";
 
 export default function Cart() {
   const { cartArray, handelTotal } = useContext(AppContextSlice);
@@ -23,6 +24,7 @@ export default function Cart() {
           </div>
         </div>
       </div>
+      <ToastContainer position="top-center" theme="colored" />
     </>
   );
 }

@@ -6,6 +6,7 @@ import { AppContextSlice } from "../../context/AppContext";
 
 export default function ProductPrice({ item }) {
   const { handelSelectProduct } = useContext(AppContextSlice);
+
   return (
     <>
       <div className="flex items-center justify-between w-[100%] p-3 flex-col bg-red-500 hover:bg-red-600 duration-150 h-[100%] border-t border-red-200">
