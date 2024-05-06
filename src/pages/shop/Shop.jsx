@@ -10,7 +10,7 @@ export default function Shop() {
         <Category />
         <Product />
       </div>
-      <ToastContainer position="top-right" theme="colored" />
+      <ToastContainer position="top-center" theme="colored" />
     </>
   );
 }

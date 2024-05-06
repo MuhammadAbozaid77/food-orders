@@ -4,13 +4,21 @@ import { useState } from "react";
 import { AppContextSlice } from "../../context/AppContext";
 
 export default function CheckForm() {
-  const { handelSubmitOrder } = useContext(AppContextSlice);
+  const { handelSubmitOrder, cartArray, total } = useContext(AppContextSlice);
   const [userName, setUserName] = useState("");
   const [userLocation, setUserLocation] = useState("");
   const handelSubmit = (e) => {
     e.preventDefault();
-    // console.log(userName, userLocation);
-    handelSubmitOrder();
+    if (userName && userLocation) {
+      handelSubmitOrder({
+        userName,
+        userLocation,
+        cartArray,
+        total,
+      });
+    } else {
+      return;
+    }
   };
   return (
     <div className="w-[100%] p-3">
@@ -21,27 +29,50 @@ export default function CheckForm() {
           </label>
           <input
             type="text"
-            className="border w-[100%] shadow p-2 rounded-[10px]"
+            className="border w-[100%] shadow p-3 text-gray-500 rounded-[10px] text-[16px]"
             value={userName}
             onChange={(e) => setUserName(e.target.value)}
           />
+          {!userName && (
+            <span className="text-red-600 text-[14px] font-semibold">
+              You Shoul fill This input
+            </span>
+          )}
         </div>
-        <div className="mb-2">
-          <label htmlFor="" className="font-semibold text-gray-600">
-            Orders
-          </label>
-          <div className="border w-[100%] shadow p-2 rounded-[10px] h-[150px]"></div>
-        </div>
+
         <div className="mb-2">
           <label htmlFor="" className="font-semibold text-gray-600">
             Location
           </label>
           <input
             type="text"
-            className="border w-[100%] shadow p-2 rounded-[10px]"
+            className="border w-[100%] shadow p-3 text-gray-500 rounded-[10px] text-[16px]"
             value={userLocation}
             onChange={(e) => setUserLocation(e.target.value)}
           />
+          {!userLocation && (
+            <span className="text-red-600 text-[14px] font-semibold">
+              You Shoul fill This input
+            </span>
+          )}
+        </div>
+
+        <div className="mb-2">
+          <label htmlFor="" className="font-semibold text-gray-600">
+            Orders
+          </label>
+          <div className="border w-[100%] shadow p-2 rounded-[10px] min-h-[200px] max-h-[220px] overflow-y-auto flex flex-col">
+            {cartArray?.map((item, index) => (
+              <div key={index} className=" p-1 flex justify-start items-center">
+                <span className="w-[30px] h-[30px] rounded-[10px] bg-green-500 p-2 flex justify-center items-center font-semibold">
+                  {item.quantity}
+                </span>
+                <span className="ms-2 p-2 w-[100%] h-[30px] flex justify-start items-center font-semibold ">
+                  {item.name}
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
 
         <button

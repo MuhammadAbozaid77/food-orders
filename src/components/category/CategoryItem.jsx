@@ -10,17 +10,17 @@ export default function CategoryItem({ item }) {
         onClick={() => setSelectedCategory(item.name)}
         className={` ${
           selectedCategory === item.name
-            ? "border-[5px] border-[#c52e10]"
+            ? "border-[5px] border-red-600"
             : "border-gray-400"
-        } w-[180px] h-[200px] rounded-[30px] border  hover:bg-gray-200 duration-150  flex justify-center flex-col overflow-hidden cursor-pointer`}
+        } w-[180px] h-[200px] rounded-[30px] border  hover:bg-gray-100 duration-150  flex justify-center flex-col overflow-hidden cursor-pointer`}
       >
         <div className="min-h-[150px] flex justify-center items-center">
           <img src={item.pic} alt="" className="h-[100%] p-3" />
         </div>
         <div
           className={` ${
-            selectedCategory === item.name ? "bg-[#c52510]" : "bg-gray-500"
-          } h-[100%] flex justify-center items-center font-bold capitalize text-gray-100 text-[22px]   hover:bg-[#c52e10] duration-150`}
+            selectedCategory === item.name ? "bg-red-600" : "bg-gray-500"
+          } h-[100%] flex justify-center items-center font-bold capitalize text-gray-100 text-[22px]   hover:bg-red-600 duration-150`}
         >
           <h3> {item.name} </h3>
         </div>

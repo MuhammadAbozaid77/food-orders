@@ -9,29 +9,37 @@ import CheckOut from "../components/cart/CheckOut";
 
 export default function AppLayout() {
   //  handelShowUserAuth,showUserAuth
-  const { showUserAuth, handelShowCheckoutModal, showOpenCheckout } =
-    useContext(AppContextSlice);
+  const {
+    showUserAuth,
+    handelShowCheckoutModal,
+    showOpenCheckout,
+    handelShowUserAuth,
+  } = useContext(AppContextSlice);
 
   return (
     <>
       <>
         <div className="relative">
           <Header />
-          <main className="min-h-[calc(100vh-80px)]">
+          <main className="min-h-[calc(100vh-80px)] relative">
             <Outlet />
           </main>
           <Footer />
-          {showUserAuth && (
-            <div className="absolute inset-0  bg-black/80 flex justify-end">
-              <UserAuth />
-            </div>
-          )}
+
           {showOpenCheckout && (
             <div
-              className="absolute inset-0  bg-black/50 flex justify-center items-center"
+              className="absolute inset-0  bg-black/80 flex justify-center items-center"
               onClick={handelShowCheckoutModal}
             >
               <CheckOut />
+            </div>
+          )}
+          {showUserAuth && (
+            <div
+              className="fixed inset-0  bg-black/80 flex justify-end h-[100vh]"
+              onClick={handelShowUserAuth}
+            >
+              <UserAuth />
             </div>
           )}
         </div>

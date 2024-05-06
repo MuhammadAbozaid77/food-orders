@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { productsJson } from "../assets/categoriesData";
 import { toast } from "react-toastify";
 
@@ -6,6 +6,7 @@ export let AppContextSlice = createContext(0);
 
 export default function AppContextProvider({ children }) {
   // -------------------------------------------------------------------------------
+  const [orderList, setOrderList] = useState([]);
   const [showCategory, setShowCategory] = useState("category");
   const [showOpenCheckout, setShowOpenCheckout] = useState(false);
   const [showUserAuth, setShowUserAuth] = useState(false);
@@ -89,10 +90,26 @@ export default function AppContextProvider({ children }) {
     setShowOpenCheckout((prev) => !prev);
   };
 
-  const handelSubmitOrder = () => {
+  const handelSubmitOrder = (args) => {
+    setOrderList((prev) => [...prev, args]);
+    console.log("orderList", orderList);
     setShowOpenCheckout(false);
     notifySuccessOrder();
   };
+
+  useEffect(() => {
+    if (orderList?.length > 0) {
+      localStorage.setItem("order-list", JSON.stringify(orderList));
+      setCartArray([]);
+    }
+  }, [orderList]);
+
+  useEffect(() => {
+    const orderListData = localStorage.getItem("order-list");
+    if (orderListData) {
+      setOrderList(JSON.parse(orderListData));
+    }
+  }, []);
 
   return (
     <>
@@ -115,6 +132,7 @@ export default function AppContextProvider({ children }) {
           handelShowCheckoutModal,
           showOpenCheckout,
           handelSubmitOrder,
+          orderList,
         }}
       >
         {children}

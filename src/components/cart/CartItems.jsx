@@ -15,19 +15,9 @@ export default function CartItems() {
         <span className="absolute top-10 left-2 w-[70px] h-[4px] bg-red-500 rounded"></span>
       </div>
       <div className="flex flex-col gap-2">
-        {cartArray.length === 0 ? (
-          <div className="w-[100%] flex justify-center items-center">
-            <h1 className="text-[30px] text-gray-500/50 font-semibold">
-              Cart is Empty
-            </h1>
-          </div>
-        ) : (
-          <>
-            {cartArray.map((item, index) => (
-              <CartItem key={index} item={item} />
-            ))}
-          </>
-        )}
+        {cartArray?.map((item, index) => (
+          <CartItem key={index} item={item} />
+        ))}
       </div>
     </>
   );
