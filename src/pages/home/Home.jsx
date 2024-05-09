@@ -1,14 +1,19 @@
-//
-import WhatWeAre from "../../components/home/WhatWeAre";
-import HomePicSection from "../../components/home/HomePicSection";
-import DownloadApp from "../../components/home/DownloadApp";
+// //
+import WhatWeAre from "./components/WhatWeAre";
+import HomePicSection from "./components/HomePicSection";
+import DownloadApp from "./components/DownloadApp";
+
+import EmailSubscribe from "./components/EmailSubscribe";
+
+// import HomeSlider from "./components/home/HomeSlider";
 export default function Home() {
   return (
     <>
-      <div className="md:p-[50px] p-[20px] flex justify-center items-center flex-col gap-5">
+      <div className="mt-[300px]">
         <HomePicSection />
-        <WhatWeAre />
         <DownloadApp />
+        <WhatWeAre />
+        <EmailSubscribe />
       </div>
     </>
   );

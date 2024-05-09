@@ -2,16 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap");
+/* font-family: "RocknRoll One", sans-serif !important; */
+/* font-family: "Rubik Mono One", monospace; */
+/* font-family: "Istok Web", sans-serif; */
+
+
+
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-body {
-  font-family: "Istok Web", sans-serif;
-}
+
 
 h1,
 h2,
@@ -19,5 +22,17 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "RocknRoll One", sans-serif !important;
+  font-family: "Rubik", sans-serif;
+
+}
+
+
+footer h1::after {
+  content: '';
+  height: 4px;
+  background-color: red;
+  width: 50px;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
 }
