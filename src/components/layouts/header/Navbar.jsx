@@ -1,40 +1,59 @@
 import { Link } from "react-router-dom";
-
+import logo from "../../../assets/logo.png";
+import { GiHamburgerMenu } from "react-icons/gi";
+import { useContext } from "react";
 //
-const navbarLinks = [
-  {
-    name: "home",
-    path: "home",
-  },
-  {
-    name: "shop",
-    path: "shop",
-  },
-  {
-    name: "orders",
-    path: "orders",
-  },
-  {
-    name: "contact us",
-    path: "contact",
-  },
-];
+// const navbarLinks = [
+//   {
+//     name: "home",
+//     path: "home",
+//   },
+//   {
+//     name: "shop",
+//     path: "shop",
+//   },
+//   {
+//     name: "orders",
+//     path: "orders",
+//   },
+//   {
+//     name: "contact us",
+//     path: "contact",
+//   },
+// ];
+
+import { AppContextSlice } from "../../../context/AppContext";
+
 export default function Navbar() {
+  const { setShowSideBar } = useContext(AppContextSlice);
+
   return (
     <>
-      <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-        {navbarLinks.map((el, index) => (
-          <li className="block py-2 px-3 text-white bg-gray-700 rounded md:bg-transparent md:text-gray-700 md:p-0 md:dark:text-gray-500 dark:bg-gray-600 md:dark:bg-transparent">
-            <Link
-              to={el.path}
-              key={index}
-              className="capitalize text-[18px] font-semibold"
-            >
-              {el.name}
-            </Link>
-          </li>
-        ))}
-      </ul>
+      <div className="flex justify-between items-center md:p-[20px] px-[30px] lg:w-[900px] w-[100%] relative">
+        <ul className="w-[100%]  hidden md:flex justify-start items-center gap-5 font-semibold  text-white uppercase text-[18px]">
+          <li> Home </li>
+          <li> About </li>
+          <li> Menu </li>
+        </ul>
+
+        {/*---------------- In Medium Size ----------------*/}
+        <div className="md:w-[250px] w-[120px]">
+          <img src={logo} alt="" className="w-[100%]" />
+        </div>
+
+        <div
+          className="flex justify-center items-center md:hidden w-[50px] h-[50px] bg-black rounded-full text-white cursor-pointer"
+          onClick={() => setShowSideBar(true)}
+        >
+          <GiHamburgerMenu size={30} />
+        </div>
+
+        <ul className="w-[100%] hidden md:flex justify-end items-center gap-5 text-white font-semibold uppercase text-[18px]">
+          <li> Orders </li>
+          <li> Location </li>
+          <li> Contact </li>
+        </ul>
+      </div>
     </>
   );
 }

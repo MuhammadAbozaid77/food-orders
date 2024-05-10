@@ -6,6 +6,7 @@ import UserAuth from "../components/auth/UserAuth";
 import { AppContextSlice } from "../context/AppContext";
 import { useContext } from "react";
 import CheckOut from "../components/cart/CheckOut";
+import SideBar from "../components/layouts/header/SideBar";
 
 export default function AppLayout() {
   //  handelShowUserAuth,showUserAuth
@@ -14,6 +15,8 @@ export default function AppLayout() {
     handelShowCheckoutModal,
     showOpenCheckout,
     handelShowUserAuth,
+    showSideBar,
+    setShowSideBar,
   } = useContext(AppContextSlice);
 
   return (
@@ -42,8 +45,15 @@ export default function AppLayout() {
               <UserAuth />
             </div>
           )}
+
+          {showSideBar && (
+            <div className="fixed inset-0   bg-black/90 flex justify-start h-[100vh] w-[300px]">
+              <SideBar setShowSideBar={setShowSideBar} />
+            </div>
+          )}
         </div>
       </>
     </>
   );
 }
+//  -left-[300px]

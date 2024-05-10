@@ -25,8 +25,8 @@ export default function WhatWeAre() {
       </div>
 
       <div className="flex gap-5 mt-[10px] flex-wrap justify-center">
-        <div className="border p-3 lg:w-[180px] w-[150px] h-[120px] rounded-[10px] flex justify-center items-center flex-col hover:bg-red-100 duration-150">
-          <span className="text-[#61443e]">
+        <div className="border p-3 lg:w-[180px] w-[150px] h-[120px] rounded-[10px] flex justify-center items-center flex-col hover:bg-gray-100 duration-150">
+          <span className="text-red-500">
             <TbTimeDuration45 size={50} />
           </span>
           <span className="text-[16px] mt-2 font-semibold text-gray-600">
@@ -34,8 +34,8 @@ export default function WhatWeAre() {
           </span>
         </div>
 
-        <div className="border p-3 lg:w-[180px] w-[150px] h-[120px] rounded-[10px] flex justify-center items-center flex-col hover:bg-red-100 duration-150">
-          <span className="text-[#61443e]">
+        <div className="border p-3 lg:w-[180px] w-[150px] h-[120px] rounded-[10px] flex justify-center items-center flex-col hover:bg-gray-100 duration-150">
+          <span className="text-red-500">
             <MdDeliveryDining size={50} />
           </span>
           <span className="text-[16px]  mt-2 font-semibold text-gray-600">
@@ -43,8 +43,8 @@ export default function WhatWeAre() {
           </span>
         </div>
 
-        <div className="border p-3 lg:w-[180px] w-[150px] h-[120px] rounded-[10px] flex justify-center items-center flex-col hover:bg-red-100 duration-150">
-          <span className="text-[#61443e]">
+        <div className="border p-3 lg:w-[180px] w-[150px] h-[120px] rounded-[10px] flex justify-center items-center flex-col hover:bg-gray-100 duration-150">
+          <span className="text-red-500">
             <FaStore size={50} />
           </span>
           <span className="text-[16px]  mt-2 font-semibold text-gray-600">
@@ -52,8 +52,8 @@ export default function WhatWeAre() {
           </span>
         </div>
 
-        <div className="border p-3 lg:w-[180px] w-[150px]  h-[120px] rounded-[10px] flex justify-center items-center flex-col hover:bg-red-100 duration-150">
-          <span className="text-[#61443e]">
+        <div className="border p-3 lg:w-[180px] w-[150px]  h-[120px] rounded-[10px] flex justify-center items-center flex-col hover:bg-gray-100 duration-150">
+          <span className="text-red-500">
             <GiForkKnifeSpoon size={50} />
           </span>
           <span className="text-[16px] mt-2 font-semibold text-gray-600">
