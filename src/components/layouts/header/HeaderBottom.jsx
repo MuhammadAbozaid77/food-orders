@@ -1,6 +1,7 @@
 //
 import { FaPhone } from "react-icons/fa";
 import { FiUser, FiHeart, FiShoppingBag, FiSearch } from "react-icons/fi";
+import { Link } from "react-router-dom";
 
 export default function HeaderBottom() {
   return (
@@ -15,18 +16,30 @@ export default function HeaderBottom() {
         </div>
       </div>
       <div className="w-[200px] h-[50px] bg-white border rounded-full flex justify-center gap-3 items-center shadow">
-        <span className="hover:bg-[#ffca3c] rounded-full duration-150 p-2">
+        <Link
+          to={"/"}
+          className="hover:bg-[#ffca3c] rounded-full duration-150 p-2"
+        >
           <FiUser size={20} />
-        </span>
-        <span className="hover:bg-[#ffca3c] rounded-full duration-150 p-2">
+        </Link>
+        <Link
+          to={"/"}
+          className="hover:bg-[#ffca3c] rounded-full duration-150 p-2"
+        >
           <FiHeart size={20} />
-        </span>
-        <span className="hover:bg-[#ffca3c] rounded-full duration-150 p-2">
+        </Link>
+        <Link
+          to={"/cart"}
+          className="hover:bg-[#ffca3c] rounded-full duration-150 p-2"
+        >
           <FiShoppingBag size={20} />
-        </span>
-        <span className="hover:bg-[#ffca3c] rounded-full duration-150 p-2">
+        </Link>
+        <Link
+          to={"/"}
+          className="hover:bg-[#ffca3c] rounded-full duration-150 p-2"
+        >
           <FiSearch size={20} />
-        </span>
+        </Link>
       </div>
     </>
   );

@@ -2,25 +2,6 @@ import { Link } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useContext } from "react";
-//
-// const navbarLinks = [
-//   {
-//     name: "home",
-//     path: "home",
-//   },
-//   {
-//     name: "shop",
-//     path: "shop",
-//   },
-//   {
-//     name: "orders",
-//     path: "orders",
-//   },
-//   {
-//     name: "contact us",
-//     path: "contact",
-//   },
-// ];
 
 import { AppContextSlice } from "../../../context/AppContext";
 
@@ -29,11 +10,11 @@ export default function Navbar() {
 
   return (
     <>
-      <div className="flex justify-between items-center md:p-[20px] px-[30px] lg:w-[900px] w-[100%] relative">
+      <div className="flex justify-between items-center md:p-[20px] px-[30px] lg:w-[1000px] w-[100%] relative">
         <ul className="w-[100%]  hidden md:flex justify-start items-center gap-5 font-semibold  text-white uppercase text-[18px]">
-          <li> Home </li>
-          <li> About </li>
-          <li> Menu </li>
+          <Link to={""}> Home </Link>
+          <Link to={"/about"}> About </Link>
+          <Link to={"/shop"}> Menu </Link>
         </ul>
 
         {/*---------------- In Medium Size ----------------*/}
@@ -49,9 +30,9 @@ export default function Navbar() {
         </div>
 
         <ul className="w-[100%] hidden md:flex justify-end items-center gap-5 text-white font-semibold uppercase text-[18px]">
-          <li> Orders </li>
-          <li> Location </li>
-          <li> Contact </li>
+          <Link to={"/orders"}> Orders </Link>
+          <Link to={"/location"}> Location </Link>
+          <Link to={"/contact"}> Contact </Link>
         </ul>
       </div>
     </>

@@ -9,6 +9,8 @@ import Shop from "../pages/shop/Shop";
 import ContactUs from "../pages/contact/ContactUs";
 import Cart from "../pages/cart/Cart";
 import Orders from "../pages/orders/Orders";
+import Location from "../pages/location/Location";
+import About from "../pages/about/About";
 
 //
 export default function AppRouters() {
@@ -23,6 +25,8 @@ export default function AppRouters() {
           <Route path="contact" element={<ContactUs />} />
           <Route path="orders" element={<Orders />} />
           <Route path="cart" element={<Cart />} />
+          <Route path="location" element={<Location />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </>
