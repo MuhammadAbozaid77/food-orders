@@ -7,8 +7,8 @@ import { FaStore } from "react-icons/fa6";
 export default function WhatWeAre() {
   return (
     <>
-      <div className="w-[100%] md:px-[100px] px-[20px] py-2  mt-[50px] border-t pt-[50px]">
-        <div className="flex justify-center items-center  w-[100%]">
+      <div className="w-[100%] md:px-[100px] px-[20px] py-2  mt-[50px]  pt-[50px]">
+        <div className="flex justify-center items-center md:flex-row flex-col w-[100%]">
           <span className="font-bold text-[30px]">What We Serve Beside</span>
           <span className="font-bold text-[30px] text-red-500  mx-2">
             Delicious Food

@@ -15,24 +15,24 @@ export default function SideBar({ setShowSideBar }) {
             <TfiClose size={30} />
           </span>
         </div>
-        <div className="p-[20px] ">
+        <div className="p-[20px]">
           <ul className="text-white flex justify-start flex-col gap-3 text-[20px]">
-            <li className="hover:translate-x-2 duration-150 hover:text-red-500 font-semibold">
+            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
               Home
             </li>
-            <li className="hover:translate-x-2 duration-150 hover:text-red-500 font-semibold">
+            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
               About
             </li>
-            <li className="hover:translate-x-2 duration-150 hover:text-red-500 font-semibold">
+            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
               Menu
             </li>
-            <li className="hover:translate-x-2 duration-150 hover:text-red-500 font-semibold">
+            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
               Orders
             </li>
-            <li className="hover:translate-x-2 duration-150 hover:text-red-500 font-semibold">
+            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
               Location
             </li>
-            <li className="hover:translate-x-2 duration-150 hover:text-red-500 font-semibold">
+            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
               Contact
             </li>
           </ul>
@@ -49,17 +49,17 @@ export default function SideBar({ setShowSideBar }) {
             </div>
           </div>
           <div className="p-[20px] border-b border-t text-white flex justify-between items-center">
-            <span>
-              <FiUser size={30} />
+            <span className="hover:bg-[#ffca3c] duration-150 p-2 rounded-full hover:text-black">
+              <FiUser size={25} />
             </span>
-            <span>
-              <FiHeart size={30} />
+            <span className="hover:bg-[#ffca3c] duration-150 p-2 rounded-full hover:text-black">
+              <FiHeart size={25} />
             </span>
-            <span>
-              <FiShoppingBag size={30} />
+            <span className="hover:bg-[#ffca3c] duration-150 p-2 rounded-full hover:text-black">
+              <FiShoppingBag size={25} />
             </span>
-            <span>
-              <FiSearch size={30} />
+            <span className="hover:bg-[#ffca3c] duration-150 p-2 rounded-full hover:text-black">
+              <FiSearch size={25} />
             </span>
           </div>
         </div>

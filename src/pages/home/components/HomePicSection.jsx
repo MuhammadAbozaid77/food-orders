@@ -11,11 +11,11 @@ export default function HomePicSection() {
     <>
       <div className="w-[100%] lg:px-[100px] px-[20px] py-2 flex justify-between items-center lg:h-[450px] h-auto gap-5 lg:flex-row flex-col">
         <div className="h-[100%] overflow-hidden rounded-[20px] w-[100%]">
-          <h1 className="text-[50px] text-red-500 font-bold">
+          <h1 className="md:text-[50px] text-[30px] text-red-500 font-bold">
             Fatest Delivery
           </h1>
-          <h1 className="text-[30px] text-gray-500 font-bold"> Easy PickUp </h1>
-          <p className="text-gray-500 font-semibold mt-3 text-[18px]">
+          <h1 className="md:text-[30px] text-[20px] text-gray-500 font-bold"> Easy PickUp </h1>
+          <p className="text-gray-500 font-semibold mt-3 md:text-[18px] text-[16px]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
             ullam, laborum voluptas impedit in placeat? Veritatis qui officia
             tempore suscipit placeat, enim delectus, perspiciatis, voluptate

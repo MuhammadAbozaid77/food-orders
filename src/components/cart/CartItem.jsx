@@ -1,5 +1,4 @@
 //
-import picc from "../../assets/pics/burger/burge.png";
 import { IoMdClose } from "react-icons/io";
 import { LuPlus, LuMinus } from "react-icons/lu";
 import { AppContextSlice } from "../../context/AppContext";
@@ -11,8 +10,12 @@ export default function CartItem({ item }) {
   return (
     <>
       <div className="flex justify-start items-center border rounded-[5px] bg-gray-100 hover:bg-gray-200 duration-150 gap-3 p-3">
-        <div className="h-[100px] w-[150px] border rounded-[10px] bg-slate-400 flex justify-center items-center">
-          <img src={item.pic} alt="" className="rounded h-[100%] p-1" />
+        <div className="h-[100px] w-[150px] rounded-[10px]  flex justify-center items-center">
+          <img
+            src={item.pic}
+            alt=""
+            className="rounded w-[100%] h-[100%] border"
+          />
         </div>
         <div className="w-[100%] flwx justify-center items-center flex-col">
           <div className="flex justify-between items-center">

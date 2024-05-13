@@ -14,19 +14,19 @@ export default function Footer() {
             <h1 className="text-[25px] text-white font-bold relative mb-[30px]">
               Information
             </h1>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300">
               Home
             </h3>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300">
               About Us
             </h3>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300">
               Our Menu
             </h3>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300">
               Blog
             </h3>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300">
               Contact
             </h3>
           </div>
@@ -35,16 +35,16 @@ export default function Footer() {
             <h1 className="text-[25px] text-white font-bold relative mb-[30px]">
               Extras
             </h1>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300">
               Cart
             </h3>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300">
               Orders
             </h3>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300">
               Contact
             </h3>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300">
               Privacy Policy
             </h3>
           </div>
@@ -53,19 +53,19 @@ export default function Footer() {
             <h1 className="text-[25px] text-white font-bold relative mb-[30px]">
               Contact
             </h1>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300 flex justify-start items-center">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300 flex justify-start items-center">
               <span className="me-2">
                 <FaLocationDot />
               </span>
               <span> Egypt - Nasr City </span>
             </h3>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300 flex justify-start items-center">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300 flex justify-start items-center">
               <span className="me-2">
                 <FaPhone />
               </span>
               <span> 01128787412 </span>
             </h3>
-            <h3 className="text-white hover:text-red-500 my-2 hover:translate-x-3 duration-300 flex justify-start items-center">
+            <h3 className="text-white hover:text-[#ffca3c] my-2 hover:translate-x-3 duration-300 flex justify-start items-center">
               <span className="me-2">
                 <MdEmail />
               </span>

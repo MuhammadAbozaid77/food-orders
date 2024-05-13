@@ -9,7 +9,7 @@ import EmailSubscribe from "./components/EmailSubscribe";
 export default function Home() {
   return (
     <>
-      <div className="mt-[300px]">
+      <div className="mt-[50px]">
         <HomePicSection />
         <DownloadApp />
         <WhatWeAre />
