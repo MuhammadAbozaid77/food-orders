@@ -1,7 +1,7 @@
 //
 import { useContext } from "react";
 import { useState } from "react";
-import { AppContextSlice } from "../../context/AppContext";
+import { AppContextSlice } from "../../../context/AppContext";
 
 export default function CheckForm() {
   const { handelSubmitOrder, cartArray, total } = useContext(AppContextSlice);

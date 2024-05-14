@@ -7,7 +7,7 @@ export let AppContextSlice = createContext(0);
 export default function AppContextProvider({ children }) {
   // -------------------------------------------------------------------------------
   const [showSideBar, setShowSideBar] = useState(false);
-
+  const [showSearchPage, setShowSearchPage] = useState(false);
   const [orderList, setOrderList] = useState([]);
   const [showCategory, setShowCategory] = useState("category");
   const [showOpenCheckout, setShowOpenCheckout] = useState(false);
@@ -137,6 +137,8 @@ export default function AppContextProvider({ children }) {
           orderList,
           showSideBar,
           setShowSideBar,
+          setShowSearchPage,
+          showSearchPage,
         }}
       >
         {children}

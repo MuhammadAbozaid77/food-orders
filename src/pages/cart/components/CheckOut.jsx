@@ -1,6 +1,6 @@
 //
 import { IoMdClose } from "react-icons/io";
-import { AppContextSlice } from "../../context/AppContext";
+import { AppContextSlice } from "../../../context/AppContext";
 import { useContext } from "react";
 import CheckForm from "./CheckForm";
 export default function CheckOut() {

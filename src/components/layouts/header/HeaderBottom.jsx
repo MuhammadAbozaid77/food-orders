@@ -6,7 +6,7 @@ import { AppContextSlice } from "../../../context/AppContext";
 import { useContext } from "react";
 
 export default function HeaderBottom() {
-  const { cartArray } = useContext(AppContextSlice);
+  const { cartArray, setShowSearchPage } = useContext(AppContextSlice);
   const { pathname } = useLocation();
 
   return (
@@ -29,14 +29,9 @@ export default function HeaderBottom() {
         >
           <FiUser size={20} />
         </Link>
-        <Link
-          to={"/wishlist"}
-          className={`hover:bg-[#ffca3c] rounded-full duration-150 p-2 ${
-            pathname === "/wishlist" ? "bg-[#ffca3c]" : ""
-          }`}
-        >
+        <div className="hover:bg-[#ffca3c] rounded-full duration-150 p-2 ">
           <FiHeart size={20} />
-        </Link>
+        </div>
         <Link
           to={"/cart"}
           className={`hover:bg-[#ffca3c] relative rounded-full duration-150 p-2 ${
@@ -50,14 +45,12 @@ export default function HeaderBottom() {
             </span>
           )}
         </Link>
-        <Link
-          to={"/search"}
-          className={`hover:bg-[#ffca3c] rounded-full duration-150 p-2 ${
-            pathname === "/search" ? "bg-[#ffca3c]" : ""
-          }`}
+        <div
+          className="hover:bg-[#ffca3c] rounded-full duration-150 p-2 "
+          onClick={() => setShowSearchPage(true)}
         >
           <FiSearch size={20} />
-        </Link>
+        </div>
       </div>
     </>
   );

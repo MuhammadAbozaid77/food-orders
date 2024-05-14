@@ -5,8 +5,9 @@ import Footer from "../components/layouts/footer/Footer";
 import UserAuth from "../components/auth/UserAuth";
 import { AppContextSlice } from "../context/AppContext";
 import { useContext } from "react";
-import CheckOut from "../components/cart/CheckOut";
+import CheckOut from "../pages/cart/components/CheckOut";
 import SideBar from "../components/layouts/header/SideBar";
+import Search from "../components/search/Search";
 
 export default function AppLayout() {
   //  handelShowUserAuth,showUserAuth
@@ -17,6 +18,8 @@ export default function AppLayout() {
     handelShowUserAuth,
     showSideBar,
     setShowSideBar,
+    setShowSearchPage,
+    showSearchPage,
   } = useContext(AppContextSlice);
 
   return (
@@ -49,6 +52,11 @@ export default function AppLayout() {
           {showSideBar && (
             <div className="fixed inset-0   bg-black/90 flex justify-start h-[100vh] w-[300px]">
               <SideBar setShowSideBar={setShowSideBar} />
+            </div>
+          )}
+          {showSearchPage && (
+            <div className="fixed inset-0 bg-white/90 h-[100vh] overflow-hidden">
+              <Search />
             </div>
           )}
         </div>

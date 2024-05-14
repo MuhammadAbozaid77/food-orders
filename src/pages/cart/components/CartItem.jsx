@@ -1,7 +1,7 @@
 //
 import { IoMdClose } from "react-icons/io";
 import { LuPlus, LuMinus } from "react-icons/lu";
-import { AppContextSlice } from "../../context/AppContext";
+import { AppContextSlice } from "../../../context/AppContext";
 import { useContext } from "react";
 
 export default function CartItem({ item }) {
