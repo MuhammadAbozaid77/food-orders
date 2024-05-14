@@ -14,8 +14,11 @@ export default function HomePicSection() {
           <h1 className="md:text-[50px] text-[30px] text-red-500 font-bold">
             Fatest Delivery
           </h1>
-          <h1 className="md:text-[30px] text-[20px] text-gray-500 font-bold"> Easy PickUp </h1>
-          <p className="text-gray-500 font-semibold mt-3 md:text-[18px] text-[16px]">
+          <h1 className="md:text-[30px] text-[20px] text-gray-500 font-bold">
+            {" "}
+            Easy PickUp{" "}
+          </h1>
+          <p className="text-gray-500  mt-3 md:text-[18px] text-[16px]">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
             ullam, laborum voluptas impedit in placeat? Veritatis qui officia
             tempore suscipit placeat, enim delectus, perspiciatis, voluptate
@@ -30,7 +33,7 @@ export default function HomePicSection() {
             Order Now
           </button>
         </div>
-        <div className="lg:h-[100%] h-[400px]  overflow-hidden rounded-[20px] w-[100%] shadow-lg flex justify-center items-center">
+        <div className="lg:h-[100%] h-[400px]  overflow-hidden  w-[100%]  flex justify-center items-center">
           <img src={pic44} alt="" className="h-[100%]" />
         </div>
       </div>

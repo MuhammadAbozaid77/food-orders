@@ -54,11 +54,19 @@ export default function AppLayout() {
               <SideBar setShowSideBar={setShowSideBar} />
             </div>
           )}
-          {showSearchPage && (
-            <div className="fixed inset-0 bg-white/90 h-[100vh] overflow-hidden">
-              <Search />
+          <div
+            className={`fixed ${
+              showSearchPage ? "top-0" : "-top-[100%]"
+            } left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow`}
+          >
+            <Search setShowSearchPage={setShowSearchPage} />
+          </div>
+
+          {/* {showSearchPage && (
+            <div className="fixed inset-0 bg-white/95">
+              <Search setShowSearchPage={setShowSearchPage} />
             </div>
-          )}
+          )} */}
         </div>
       </>
     </>

@@ -12,7 +12,7 @@ export default function SideBar({ setShowSideBar }) {
             className="hover:bg-red-500 p-2 rounded-full cursor-pointer"
             onClick={() => setShowSideBar(false)}
           >
-            <TfiClose size={30} />
+            <TfiClose size={20} />
           </span>
         </div>
         <div className="p-[20px]">
