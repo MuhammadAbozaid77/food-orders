@@ -1,7 +1,6 @@
 //
 import Category from "../../components/category/Category";
 import Product from "../../components/product/Product";
-import { ToastContainer } from "react-toastify";
 
 export default function Shop() {
   return (
@@ -10,7 +9,6 @@ export default function Shop() {
         <Category />
         <Product />
       </div>
-      <ToastContainer position="top-center" theme="colored" />
     </>
   );
 }

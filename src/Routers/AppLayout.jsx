@@ -8,9 +8,9 @@ import { useContext } from "react";
 import CheckOut from "../pages/cart/components/CheckOut";
 import SideBar from "../components/layouts/header/SideBar";
 import Search from "../components/search/Search";
+import { ToastContainer } from "react-toastify";
 
 export default function AppLayout() {
-  //  handelShowUserAuth,showUserAuth
   const {
     showUserAuth,
     handelShowCheckoutModal,
@@ -25,6 +25,8 @@ export default function AppLayout() {
   return (
     <>
       <>
+        <ToastContainer position="top-center" theme="colored" />
+
         <div className="relative">
           <Header />
           <main className="min-h-[calc(100vh-80px)] relative">
@@ -61,15 +63,8 @@ export default function AppLayout() {
           >
             <Search setShowSearchPage={setShowSearchPage} />
           </div>
-
-          {/* {showSearchPage && (
-            <div className="fixed inset-0 bg-white/95">
-              <Search setShowSearchPage={setShowSearchPage} />
-            </div>
-          )} */}
         </div>
       </>
     </>
   );
 }
-//  -left-[300px]

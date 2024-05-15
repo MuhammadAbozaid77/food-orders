@@ -7,14 +7,17 @@ export default function CheckForm() {
   const { handelSubmitOrder, cartArray, total } = useContext(AppContextSlice);
   const [userName, setUserName] = useState("");
   const [userLocation, setUserLocation] = useState("");
+
   const handelSubmit = (e) => {
     e.preventDefault();
+    const id = crypto.randomUUID();
     if (userName && userLocation) {
       handelSubmitOrder({
         userName,
         userLocation,
         cartArray,
         total,
+        userId: id,
       });
     } else {
       return;

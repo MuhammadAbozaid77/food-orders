@@ -4,10 +4,7 @@ import { MdKeyboardDoubleArrowRight } from "react-icons/md";
 import { AppContextSlice } from "../../../context/AppContext";
 
 export default function CartDetails() {
-  const { total, handelShowCheckoutModal, orderList } =
-    useContext(AppContextSlice);
-  console.log(orderList);
-  // console.log(cartArray);
+  const { total, handelShowCheckoutModal } = useContext(AppContextSlice);
   return (
     <>
       <div>

@@ -13,6 +13,7 @@ import Location from "../pages/location/Location";
 import About from "../pages/about/About";
 import Login from "../pages/login/Login";
 import Wishlist from "../pages/wishlist/Wishlist";
+import OrderDetails from "../pages/order-details/OrderDetails";
 
 //
 export default function AppRouters() {
@@ -26,6 +27,7 @@ export default function AppRouters() {
           <Route path="shop" element={<Shop />} />
           <Route path="contact" element={<ContactUs />} />
           <Route path="orders" element={<Orders />} />
+          <Route path="orderdetails/:id" element={<OrderDetails />} />
           <Route path="cart" element={<Cart />} />
           <Route path="location" element={<Location />} />
           <Route path="about" element={<About />} />

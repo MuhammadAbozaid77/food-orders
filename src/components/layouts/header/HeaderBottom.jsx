@@ -40,7 +40,7 @@ export default function HeaderBottom() {
         >
           <FiShoppingBag size={20} />
           {cartArray?.length > 0 && (
-            <span className="w-[15px] h-[15px] bg-red-600 text-[10px] text-white rounded-full top-0 right-0 absolute flex justify-center items-center">
+            <span className="w-[15px] h-[15px] bg-red-600 text-[10px] text-white rounded-full top-0 -right-[5px] absolute flex justify-center items-center">
               {cartArray?.length}
             </span>
           )}
