@@ -2,6 +2,7 @@
 import { FaPhone } from "react-icons/fa";
 import { FiUser, FiHeart, FiShoppingBag, FiSearch } from "react-icons/fi";
 import { TfiClose } from "react-icons/tfi";
+import { Link } from "react-router-dom";
 
 export default function SideBar({ setShowSideBar }) {
   return (
@@ -17,24 +18,42 @@ export default function SideBar({ setShowSideBar }) {
         </div>
         <div className="p-[20px]">
           <ul className="text-white flex justify-start flex-col gap-3 text-[20px]">
-            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
+            <Link
+              to={"/home"}
+              className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold"
+            >
               Home
-            </li>
-            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
+            </Link>
+            <Link
+              to={""}
+              className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold"
+            >
               About
-            </li>
-            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
+            </Link>
+            <Link
+              to={"/shop"}
+              className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold"
+            >
               Menu
-            </li>
-            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
+            </Link>
+            <Link
+              to={"/orders"}
+              className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold"
+            >
               Orders
-            </li>
-            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
+            </Link>
+            <Link
+              to={""}
+              className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold"
+            >
               Location
-            </li>
-            <li className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold">
+            </Link>
+            <Link
+              to={"/contact"}
+              className="hover:translate-x-2 duration-150 hover:text-[#ffca3c] font-semibold"
+            >
               Contact
-            </li>
+            </Link>
           </ul>
         </div>
 

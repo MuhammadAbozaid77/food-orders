@@ -67,7 +67,7 @@ export default function CheckForm() {
           <div className="border w-[100%] shadow p-2 rounded-[10px] min-h-[200px] max-h-[220px] overflow-y-auto flex flex-col">
             {cartArray?.map((item, index) => (
               <div key={index} className=" p-1 flex justify-start items-center">
-                <span className="w-[30px] h-[30px] rounded-[10px] bg-green-500 p-2 flex justify-center items-center font-semibold">
+                <span className="w-[30px] h-[30px] rounded-[10px] bg-green-700 text-white p-2 flex justify-center items-center font-semibold">
                   {item.quantity}
                 </span>
                 <span className="ms-2 p-2 w-[100%] h-[30px] flex justify-start items-center font-semibold ">
@@ -80,7 +80,7 @@ export default function CheckForm() {
 
         <button
           type="submit"
-          className="w-[100%] mt-2 bg-transparent duration-150 hover:bg-green-600 text-green-700 shadow text-[20px] font-semibold hover:text-white py-3 px-4 border border-green-500 hover:border-transparent rounded-[10px]"
+          className="w-[100%] mt-2 bg-transparent duration-150 hover:bg-green-600 text-green-700 shadow text-[20px] font-semibold hover:text-white py-3 px-4 border border-green-700 hover:border-transparent rounded-[10px]"
         >
           Submit Order
         </button>

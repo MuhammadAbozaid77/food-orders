@@ -58,7 +58,7 @@ export default function Search({ setShowSearchPage }) {
           </button>
         </div>
 
-        <div>
+        <div className="flex justify-center items-center">
           <SearchProduct data={data} />
         </div>
       </div>

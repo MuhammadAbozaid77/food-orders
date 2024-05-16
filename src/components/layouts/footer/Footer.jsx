@@ -9,7 +9,7 @@ export default function Footer() {
   return (
     <>
       <footer>
-        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 p-[50px] bg-[#292929] gap-5">
+        <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 py-[50px] md:px-[100px] px-[50px]  p-[20px]  bg-[#292929] gap-5">
           <div className="">
             <h1 className="text-[25px] text-white font-bold relative mb-[30px]">
               Information

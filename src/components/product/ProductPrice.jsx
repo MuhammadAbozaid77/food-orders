@@ -9,19 +9,18 @@ export default function ProductPrice({ item }) {
 
   return (
     <>
-      <div className="flex items-center justify-between w-[100%] px-3 py-1 flex-col   h-[100px] border-t border-gray-200">
+      <div className="flex items-center justify-between w-[100%] p-4 flex-col">
         <div className="w-[100%] flex  justify-between  flex-col">
-          <div className="text-white">
-            <h1 className="font-bold  text-[20px]"> {item.name} </h1>
-            <p className="text-black text-[14px] font-semibold">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            </p>
+          <div className="">
+            <h1 className="text-[20px]"> {item.name} </h1>
           </div>
-          <div className="flex justify-between items-center ">
-            <h1 className="text-[30px] font-bold text-white">$ {item.price}</h1>
+          <div className="flex justify-between items-center mt-[10px]">
+            <h1 className="text-[25px] text-red-600 font-semibold">
+              $ {item.price}
+            </h1>
             <button
               onClick={() => handelSelectProduct(item)}
-              className="rounded-[5px] bg-black hover:bg-slate-800 duration-150 text-white cursor-pointer py-2 px-3"
+              className="rounded-[5px] bg-black hover:bg-slate-800 duration-150 text-white cursor-pointer w-[50px] flex justify-center items-center h-[30px]"
             >
               <TiPlus size={20} />
             </button>

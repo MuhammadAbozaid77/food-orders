@@ -11,8 +11,6 @@ import Cart from "../pages/cart/Cart";
 import Orders from "../pages/orders/Orders";
 import Location from "../pages/location/Location";
 import About from "../pages/about/About";
-import Login from "../pages/login/Login";
-import Wishlist from "../pages/wishlist/Wishlist";
 import OrderDetails from "../pages/order-details/OrderDetails";
 
 //
@@ -31,8 +29,6 @@ export default function AppRouters() {
           <Route path="cart" element={<Cart />} />
           <Route path="location" element={<Location />} />
           <Route path="about" element={<About />} />
-          <Route path="login" element={<Login />} />
-          <Route path="wishlist" element={<Wishlist />} />
         </Route>
       </Routes>
     </>

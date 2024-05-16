@@ -9,6 +9,7 @@ import CheckOut from "../pages/cart/components/CheckOut";
 import SideBar from "../components/layouts/header/SideBar";
 import Search from "../components/search/Search";
 import { ToastContainer } from "react-toastify";
+import WhishList from "../components/whishList/WhishList";
 
 export default function AppLayout() {
   const {
@@ -20,6 +21,8 @@ export default function AppLayout() {
     setShowSideBar,
     setShowSearchPage,
     showSearchPage,
+    showWishList,
+    setShowWishList,
   } = useContext(AppContextSlice);
 
   return (
@@ -36,32 +39,41 @@ export default function AppLayout() {
 
           {showOpenCheckout && (
             <div
-              className="absolute inset-0  bg-black/80 flex justify-center items-center"
+              className="fixed inset-0 h-[100vh] bg-black/90 flex justify-center items-center"
               onClick={handelShowCheckoutModal}
             >
               <CheckOut />
             </div>
           )}
-          {showUserAuth && (
-            <div
-              className="fixed inset-0  bg-black/80 flex justify-end h-[100vh]"
-              onClick={handelShowUserAuth}
-            >
-              <UserAuth />
-            </div>
-          )}
 
           {showSideBar && (
-            <div className="fixed inset-0   bg-black/90 flex justify-start h-[100vh] w-[300px]">
+            <div className="fixed inset-0   bg-black/90 flex justify-start h-[100vh] w-[300px] z-[800]">
               <SideBar setShowSideBar={setShowSideBar} />
             </div>
           )}
+
           <div
             className={`fixed ${
               showSearchPage ? "top-0" : "-top-[100%]"
-            } left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow`}
+            } left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow z-[1000]`}
           >
             <Search setShowSearchPage={setShowSearchPage} />
+          </div>
+
+          <div
+            className={`fixed ${
+              showWishList ? "top-0" : "-top-[100%]"
+            } left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow z-[1000]`}
+          >
+            <WhishList setShowWishList={setShowWishList} />
+          </div>
+
+          <div
+            className={`fixed ${
+              showUserAuth ? "top-0" : "-top-[100%]"
+            } left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow z-[1000]`}
+          >
+            <UserAuth />
           </div>
         </div>
       </>

@@ -1,13 +1,14 @@
-import ProductItem from "../product/ProductItem";
+// import ProductItem from "../product/ProductItem";
+import SearchItem from "./SearchItem";
 
 //
 export default function SearchProduct({ data }) {
   // console.log(data);
   return (
     <>
-      <div className="flex gap-3 flex-wrap lg:justify-start justify-center mt-[50px]">
+      <div className="lg:w-[850px] w-[100%] mt-[50px] grid md:grid-cols-2  grid-cols-1 gap-2  overflow-y-scroll">
         {data?.map((item, index) => (
-          <ProductItem item={item} key={index} />
+          <SearchItem item={item} key={index} />
         ))}
       </div>
     </>

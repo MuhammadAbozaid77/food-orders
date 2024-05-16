@@ -6,7 +6,8 @@ import { AppContextSlice } from "../../../context/AppContext";
 import { useContext } from "react";
 
 export default function HeaderBottom() {
-  const { cartArray, setShowSearchPage } = useContext(AppContextSlice);
+  const { cartArray, setShowSearchPage, handelShowUserAuth, setShowWishList } =
+    useContext(AppContextSlice);
   const { pathname } = useLocation();
 
   return (
@@ -22,14 +23,18 @@ export default function HeaderBottom() {
       </div>
       <div className="w-[200px] h-[50px] bg-white border rounded-full flex justify-center gap-3 items-center shadow">
         <Link
-          to={"/login"}
+          // to={""}
+          onClick={handelShowUserAuth}
           className={`hover:bg-[#ffca3c] rounded-full duration-150 p-2 ${
             pathname === "/login" ? "bg-[#ffca3c]" : ""
           }`}
         >
           <FiUser size={20} />
         </Link>
-        <div className="hover:bg-[#ffca3c] rounded-full duration-150 p-2 ">
+        <div
+          className="hover:bg-[#ffca3c] rounded-full duration-150 p-2 "
+          onClick={() => setShowWishList(true)}
+        >
           <FiHeart size={20} />
         </div>
         <Link

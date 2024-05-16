@@ -8,6 +8,7 @@ export default function AppContextProvider({ children }) {
   // -------------------------------------------------------------------------------
   const [showSideBar, setShowSideBar] = useState(false);
   const [showSearchPage, setShowSearchPage] = useState(false);
+  const [showWishList, setShowWishList] = useState(false);
   const [orderList, setOrderList] = useState([]);
   const [showCategory, setShowCategory] = useState("category");
   const [showOpenCheckout, setShowOpenCheckout] = useState(false);
@@ -139,6 +140,8 @@ export default function AppContextProvider({ children }) {
           setShowSideBar,
           setShowSearchPage,
           showSearchPage,
+          showWishList,
+          setShowWishList,
         }}
       >
         {children}
