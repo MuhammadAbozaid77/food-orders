@@ -1,10 +1,10 @@
 //
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/layouts/header/Header";
 import Footer from "../components/layouts/footer/Footer";
 import UserAuth from "../components/auth/UserAuth";
 import { AppContextSlice } from "../context/AppContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import CheckOut from "../pages/cart/components/CheckOut";
 import SideBar from "../components/layouts/header/SideBar";
 import Search from "../components/search/Search";
@@ -12,11 +12,12 @@ import { ToastContainer } from "react-toastify";
 import WhishList from "../components/whishList/WhishList";
 
 export default function AppLayout() {
+  const { pathname } = useLocation();
+
   const {
     showUserAuth,
     handelShowCheckoutModal,
     showOpenCheckout,
-    handelShowUserAuth,
     showSideBar,
     setShowSideBar,
     setShowSearchPage,
@@ -24,6 +25,15 @@ export default function AppLayout() {
     showWishList,
     setShowWishList,
   } = useContext(AppContextSlice);
+
+  useEffect(() => {
+    let indexToRemove = 0;
+    let newStr =
+      pathname.substring(0, indexToRemove) +
+      pathname.substring(indexToRemove + 1);
+
+    document.title = newStr;
+  }, [pathname]);
 
   return (
     <>

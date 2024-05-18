@@ -27,14 +27,14 @@ export default function AppContextProvider({ children }) {
   };
   // -------------------------------------------------------------------------------
   const handelSelectedCat = (args) => {
-    const categoryProducts = productsJson.filter((el) => el?.category === args);
+    const categoryProducts = productsJson?.filter((el) => el?.category === args);
     setProductsData(categoryProducts);
   };
   const handelSelectProduct = (args) => {
-    const findObject = cartArray.find((index) => index.id === args.id);
+    const findObject = cartArray?.find((index) => index.id === args.id);
     if (findObject) {
       setCartArray(
-        cartArray.map((obj) =>
+        cartArray?.map((obj) =>
           obj.id === args.id ? { ...obj, quantity: obj.quantity + 1 } : obj
         )
       );
@@ -46,7 +46,7 @@ export default function AppContextProvider({ children }) {
   const handelIncreaseProduct = (args) => {
     if (args.quantity >= 1) {
       setCartArray(
-        cartArray.map((targetIncease) =>
+        cartArray?.map((targetIncease) =>
           targetIncease.id === args.id
             ? { ...targetIncease, quantity: targetIncease.quantity + 1 }
             : targetIncease
@@ -95,7 +95,6 @@ export default function AppContextProvider({ children }) {
 
   const handelSubmitOrder = (args) => {
     setOrderList((prev) => [...prev, args]);
-    console.log("orderList", orderList);
     setShowOpenCheckout(false);
     notifySuccessOrder();
   };
