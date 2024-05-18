@@ -1,5 +1,4 @@
 //
-import { IoMdClose } from "react-icons/io";
 import { AppContextSlice } from "../../../context/AppContext";
 import { useContext } from "react";
 import CheckForm from "./CheckForm";
@@ -10,7 +9,7 @@ export default function CheckOut() {
   return (
     <>
       <div
-        className="w-[400px] h-[600px] bg-white p-3 rounded-[10px]"
+        className="w-[400px] h-[550px] bg-white p-3 rounded-[10px]"
         onClick={(e) => e.stopPropagation()}
       >
         <div>

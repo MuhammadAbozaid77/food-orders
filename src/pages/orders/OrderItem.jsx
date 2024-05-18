@@ -7,10 +7,10 @@ export default function OrderItem({ item }) {
   return (
     <>
       <div className="flex gap-5 justify-between items-center border rounded-[20px] overflow-hidden mb-2 shadow cursor-pointer">
-        <div className="h-[80px]">
+        <div className="h-[80px] sm:block hidden ">
           <img src={pic} alt="" className="h-[100%]" />
         </div>
-        <Link to={`/orderdetails/${item?.userId}`} className="w-[70%]">
+        <Link to={`/orderdetails/${item?.userId}`} className="w-[70%] p-2">
           <h1 className="text-[16px] font-semibold text-red-500">
             {item.userName}
           </h1>

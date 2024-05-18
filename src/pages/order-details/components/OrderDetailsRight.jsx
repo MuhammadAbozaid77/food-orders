@@ -2,20 +2,20 @@
 export default function OrderDetailsRight({ data }) {
   return (
     <>
-      <div className="w-[100%] p-5 border shadow-lg">
+      <div className="w-[100%] sm:p-5 p-2 border shadow-lg">
         {data?.map((item, index) => (
           <div
-            className="flex justify-start gap-5 items-center md:flex-row  mb-[10px]"
+            className="flex justify-start sm:gap-5 gap-2 items-center md:flex-row  mb-[10px]"
             key={index}
           >
-            <div className="h-[80px] ">
+            <div className="w-[60px] h-[60px] ">
               <img
                 src={item?.pic}
                 alt=""
                 className="rounded-[10px] h-[100%] border p-1 shadow"
               />
             </div>
-            <div className="w-[80px] h-[80px]  border flex justify-center items-center text-[50px] rounded bg-green-500 text-white">
+            <div className="w-[60px] h-[60px]  border flex justify-center items-center text-[30px] rounded bg-green-500 text-white">
               {item?.quantity}
             </div>
             <div>

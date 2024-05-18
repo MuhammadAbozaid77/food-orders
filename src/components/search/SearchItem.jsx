@@ -6,7 +6,7 @@ export default function SearchItem({ item }) {
 
   return (
     <>
-      <div className="h-[100px] shadow-lg  border mb-2 rounded-[10px] p-2 w-[100%] flex items-center justify-start gap-5">
+      <div className="h-[80px] shadow-lg  border mb-2 rounded-[10px] p-2 w-[100%] flex items-center justify-start gap-5">
         <div className="flex justify-center items-center h-[100%] w-[100px] border-t border-gray-100 shadow-md">
           <img src={item.pic} alt="" className=" h-[100%]" />
         </div>
@@ -19,7 +19,7 @@ export default function SearchItem({ item }) {
           </div>
           <div className="p-3">
             <button
-              className="border p-3 w-[80px] rounded-[10px] bg-red-600 hover:bg-red-700 duration-150 text-white text-[18px]"
+              className="border p-1 w-[100px] rounded-[10px] bg-red-600 hover:bg-red-700 duration-150 text-white text-[20px]"
               onClick={() => handelSelectProduct(item)}
             >
               Add

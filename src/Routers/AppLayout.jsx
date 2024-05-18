@@ -16,7 +16,6 @@ export default function AppLayout() {
     showUserAuth,
     handelShowCheckoutModal,
     showOpenCheckout,
-    handelShowUserAuth,
     showSideBar,
     setShowSideBar,
     setShowSearchPage,

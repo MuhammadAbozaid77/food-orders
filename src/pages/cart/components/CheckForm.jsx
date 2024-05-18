@@ -24,7 +24,7 @@ export default function CheckForm() {
     }
   };
   return (
-    <div className="w-[100%] p-3">
+    <div className="w-[100%] px-[30px] py-5">
       <form onSubmit={handelSubmit} className="w-[100%]">
         <div className="mb-2">
           <label htmlFor="" className="font-semibold text-gray-600">
@@ -64,7 +64,7 @@ export default function CheckForm() {
           <label htmlFor="" className="font-semibold text-gray-600">
             Orders
           </label>
-          <div className="border w-[100%] shadow p-2 rounded-[10px] min-h-[200px] max-h-[220px] overflow-y-auto flex flex-col">
+          <div className="border w-[100%] shadow p-2 rounded-[10px] min-h-[150px] max-h-[200px] overflow-y-auto flex flex-col">
             {cartArray?.map((item, index) => (
               <div key={index} className=" p-1 flex justify-start items-center">
                 <span className="w-[30px] h-[30px] rounded-[10px] bg-green-700 text-white p-2 flex justify-center items-center font-semibold">
