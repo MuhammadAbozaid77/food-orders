@@ -1,9 +1,13 @@
 import { TfiClose } from "react-icons/tfi";
 import WishListProducts from "./WishListProducts";
 import { BsFillBox2HeartFill } from "react-icons/bs";
+import { AppContextSlice } from "../../context/AppContext";
+import { useContext } from "react";
 
 //
 export default function WhishList({ setShowWishList }) {
+  const { wishListArray, handelWishList } = useContext(AppContextSlice);
+
   return (
     <>
       <div className="p-[50px]">
@@ -26,7 +30,10 @@ export default function WhishList({ setShowWishList }) {
         </div>
 
         <div className="flex justify-center items-center">
-          <WishListProducts data={[]} />
+          <WishListProducts
+            data={wishListArray}
+            handelWishList={handelWishList}
+          />
         </div>
       </div>
     </>

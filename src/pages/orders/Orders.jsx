@@ -4,6 +4,7 @@ import { AppContextSlice } from "../../context/AppContext";
 import {
   MdOutlineArrowForwardIos,
   MdOutlineArrowBackIos,
+  MdDeliveryDining,
 } from "react-icons/md";
 
 export default function Orders() {
@@ -31,39 +32,62 @@ export default function Orders() {
 
   return (
     <>
-      <div className="px-[40px] pb-[50px] pt-[30px] flex justify-center">
-        <div className="w-[800px]">
-          {currentItems.map((item, index) => (
-            <OrderItem item={item} key={index} />
-          ))}
-        </div>
+      <div className="flex justify-center items-center mt-[30px]">
+        <span className="text-red-500 text-[50px]">
+          <MdDeliveryDining />
+        </span>
+        <span className="text-[30px] mx-5 text-gray-600 font-bold">
+          Submitted Orders
+        </span>
       </div>
-      <div className="flex justify-center mt-5">
-        <button
-          onClick={handlePrevious}
-          disabled={currentPage === 1}
-          className="border p-3 bg-red-600 text-white rounded-md"
-        >
-          <MdOutlineArrowBackIos size={25} />
-        </button>
-        {Array.from({ length: totalPages }, (_, index) => (
-          <button
-            key={index + 1}
-            onClick={() => setCurrentPage(index + 1)}
-            disabled={index + 1 === currentPage}
-            className="mx-1 p-3 border rounded w-[50px] text-[18px] shadow-md border-gray-400 disabled:bg-white bg-gray-500"
-          >
-            {index + 1}
-          </button>
-        ))}
-        <button
-          onClick={handleNext}
-          disabled={currentPage === totalPages}
-          className="border p-3 bg-red-600 text-white rounded-md"
-        >
-          <MdOutlineArrowForwardIos size={25} />
-        </button>
-      </div>
+      {orderList.length === 0 ? (
+        <>
+          <div className="px-[40px] pb-[50px] pt-[30px] flex justify-center items-center flex-col">
+            <span className="text-gray-300 ">
+              <MdDeliveryDining size={100} />
+            </span>
+            <h1 className="text-[20px] mt-[10px] text-gray-500">
+              No Orders Submitted Yet
+            </h1>
+          </div>
+        </>
+      ) : (
+        <>
+          <div className="px-[40px] pb-[50px] pt-[30px] flex justify-center">
+            <div className="w-[800px]">
+              {currentItems?.map((item, index) => (
+                <OrderItem item={item} key={index} />
+              ))}
+            </div>
+          </div>
+          <div className="flex justify-center mt-5">
+            <button
+              onClick={handlePrevious}
+              disabled={currentPage === 1}
+              className="border p-3 bg-red-600 text-white rounded-md"
+            >
+              <MdOutlineArrowBackIos size={25} />
+            </button>
+            {Array.from({ length: totalPages }, (_, index) => (
+              <button
+                key={index + 1}
+                onClick={() => setCurrentPage(index + 1)}
+                disabled={index + 1 === currentPage}
+                className="mx-1 p-3 border rounded w-[50px] text-[18px] shadow-md border-gray-400 disabled:bg-white bg-gray-500"
+              >
+                {index + 1}
+              </button>
+            ))}
+            <button
+              onClick={handleNext}
+              disabled={currentPage === totalPages}
+              className="border p-3 bg-red-600 text-white rounded-md"
+            >
+              <MdOutlineArrowForwardIos size={25} />
+            </button>
+          </div>
+        </>
+      )}
     </>
   );
 }

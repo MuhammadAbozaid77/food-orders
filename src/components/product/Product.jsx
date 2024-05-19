@@ -5,7 +5,7 @@ import { useContext, useEffect } from "react";
 import { AppContextSlice } from "../../context/AppContext";
 
 export default function Product() {
-  const { productsData, handelSelectedCat, selectedCategory } =
+  const { productsData, handelSelectedCat, selectedCategory, handelWishList } =
     useContext(AppContextSlice);
   useEffect(() => {
     handelSelectedCat(selectedCategory);
@@ -23,7 +23,11 @@ export default function Product() {
       </div>
       <div className="flex gap-3 flex-wrap lg:justify-start justify-center mt-[30px]">
         {productsData?.map((item, index) => (
-          <ProductItem item={item} key={index} />
+          <ProductItem
+            item={item}
+            key={index}
+            handelWishList={handelWishList}
+          />
         ))}
       </div>
     </>
