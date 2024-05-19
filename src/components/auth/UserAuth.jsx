@@ -21,20 +21,20 @@ export default function UserAuth() {
         </div>
 
         <div
-          className="md:w-[400px] w-[100%] lg:h-[70vh] bg-white p-5 border shadow-lg mt-[20px] rounded-lg border-gray-300"
+          className="md:w-[400px] w-[100%] lg:h-[70vh] h-[100vh] bg-white p-5 border shadow-lg mt-[20px] rounded-lg border-gray-300"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="mt-5 flex justify-center items-center flex-col">
-            <h1 className="text-center font-semibold text-[20px]">
+            <h1 className="text-center font-semibold sm:text-[20px]">
               Welcome Back
             </h1>
-            <p className="text-center text-[14px] w-[70%] text-gray-500 dark:text-gray-400 capitalize">
+            <p className="text-center sm:text-[14px]  sm:w-[70%] w-[100%] text-gray-500 dark:text-gray-400 capitalize">
               we would love have you join our 100% remote network of created
               freelancer
             </p>
           </div>
 
-          <div className="mt-5 p-3 flex justify-center items-center ">
+          {/* <div className="mt-5 p-3 flex justify-center items-center ">
             <button className="capitalize flex justify-center items-center p-3 w-[100%] border rounded shadow">
               <span>
                 <FcGoogle />
@@ -43,7 +43,7 @@ export default function UserAuth() {
                 SignUp With Google
               </span>
             </button>
-          </div>
+          </div> */}
 
           <div className="my-5">OR</div>
 

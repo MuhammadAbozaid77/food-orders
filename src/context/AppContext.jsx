@@ -16,6 +16,7 @@ export default function AppContextProvider({ children }) {
   const [selectedCategory, setSelectedCategory] = useState("pizza");
   const [productsData, setProductsData] = useState([]);
   const [cartArray, setCartArray] = useState([]);
+  const [wishListArray, setWishListArray] = useState([]);
   const [total, setTotal] = useState(0);
   const notifySuccess = () => toast.success("New Product Add In Your Order");
   const notifySuccessOrder = () => toast.success("You Order Is Drived");
@@ -27,10 +28,13 @@ export default function AppContextProvider({ children }) {
   };
   // -------------------------------------------------------------------------------
   const handelSelectedCat = (args) => {
-    const categoryProducts = productsJson?.filter((el) => el?.category === args);
+    const categoryProducts = productsJson?.filter(
+      (el) => el?.category === args
+    );
     setProductsData(categoryProducts);
   };
   const handelSelectProduct = (args) => {
+    // return true or false
     const findObject = cartArray?.find((index) => index.id === args.id);
     if (findObject) {
       setCartArray(
@@ -97,6 +101,15 @@ export default function AppContextProvider({ children }) {
     setOrderList((prev) => [...prev, args]);
     setShowOpenCheckout(false);
     notifySuccessOrder();
+  };
+
+  const handelWishList = (args) => {
+    const findObj = wishListArray?.find((index) => index.id === args.id);
+    if (findObj) {
+      console.log("Remove");
+    } else {
+      ("Add To Love");
+    }
   };
 
   useEffect(() => {
