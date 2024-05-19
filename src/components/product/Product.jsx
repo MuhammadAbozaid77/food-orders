@@ -1,15 +1,11 @@
 //
 import ProductItem from "./ProductItem";
 import { MdFastfood } from "react-icons/md";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { AppContextSlice } from "../../context/AppContext";
 
 export default function Product() {
-  const { productsData, handelSelectedCat, selectedCategory, handelWishList } =
-    useContext(AppContextSlice);
-  useEffect(() => {
-    handelSelectedCat(selectedCategory);
-  }, [selectedCategory]);
+  const { productsData, handelWishList } = useContext(AppContextSlice);
 
   return (
     <>

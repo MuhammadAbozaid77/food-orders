@@ -9,13 +9,12 @@ export default function AppContextProvider({ children }) {
   const [showSideBar, setShowSideBar] = useState(false);
   const [showSearchPage, setShowSearchPage] = useState(false);
   const [showWishList, setShowWishList] = useState(false);
-  const [showCategory, setShowCategory] = useState("category");
   const [showOpenCheckout, setShowOpenCheckout] = useState(false);
   const [showUserAuth, setShowUserAuth] = useState(false);
   // ---------------------------------- Data Structure -----------------------------------
+  const [productsData, setProductsData] = useState([]);
   const [orderList, setOrderList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("pizza");
-  const [productsData, setProductsData] = useState([]);
   const [cartArray, setCartArray] = useState([]);
   const [wishListArray, setWishListArray] = useState([]);
   const [total, setTotal] = useState(0);
@@ -32,13 +31,14 @@ export default function AppContextProvider({ children }) {
   const handelShowUserAuth = () => {
     setShowUserAuth((prev) => !prev);
   };
-  // -------------------------------------------------------------------------------
+  // ---------------------------------- Selected Category and Products -------------------------------------------------------------
   const handelSelectedCat = (args) => {
     const categoryProducts = productsJson?.filter(
       (el) => el?.category === args
     );
     setProductsData(categoryProducts);
   };
+  // ---------------------------------------------------------------------
   const handelSelectProduct = (args) => {
     // return true or false
     const findObject = cartArray?.find((index) => index.id === args.id);
@@ -53,8 +53,7 @@ export default function AppContextProvider({ children }) {
       notifySuccess();
     }
   };
-
-  // ---------------------------------- Cart Logic -----------------------------------
+  // ------------------------------------------------------------ Cart Logic -------------------------------------------------------
 
   const handelIncreaseProduct = (args) => {
     if (args.quantity >= 1) {
@@ -113,6 +112,34 @@ export default function AppContextProvider({ children }) {
     setShowOpenCheckout(false);
   };
 
+  // ----------------------------------  WishList -----------------------------------
+
+  const handelWishList = (args) => {
+    const updatedWishListArray = wishListArray?.find(
+      (index) => index.id === args.id
+    )
+      ? wishListArray?.filter((item) => item.id !== args.id)
+      : [...wishListArray, args];
+    setWishListArray(updatedWishListArray);
+    localStorage.setItem(
+      "order-wishlist",
+      JSON.stringify(updatedWishListArray)
+    );
+    if (updatedWishListArray?.find((item) => item.id === args.id)) {
+      notifyaddWhishlist();
+    } else {
+      notifyRemoveWhishlist();
+    }
+  };
+
+  // ------------------------------------------ All Effects --------------------------------------------
+
+  // Select Category Products
+  useEffect(() => {
+    handelSelectedCat(selectedCategory);
+  }, [selectedCategory]);
+  // ------------------------------------------------------------------------
+  // Select Order List
   useEffect(() => {
     const orderListData = localStorage.getItem("order-list");
     if (orderListData) {
@@ -124,49 +151,30 @@ export default function AppContextProvider({ children }) {
     localStorage.setItem("order-list", JSON.stringify(orderList));
     setCartArray([]);
   }, [orderList]);
-
-  // ----------------------------------  Wish List -----------------------------------
-  const handelWishList = (args) => {
-    const findObj = wishListArray?.find((index) => index.id === args.id);
-    if (findObj) {
-      setWishListArray(wishListArray?.filter((item) => item.id !== args.id));
-      notifyRemoveWhishlist();
-    } else {
-      setWishListArray([...wishListArray, args]);
-      notifyaddWhishlist();
-    }
-  };
-
+  // ------------------------------------------------------------------------
+  // Get wishlist List
   useEffect(() => {
     const wishList = localStorage.getItem("order-wishlist");
     if (wishList) {
       setWishListArray(JSON.parse(wishList));
     }
   }, []);
-
+  // ------------------------------------------------------------------------
+  // Merged Poducts and Wishlist
   useEffect(() => {
-    localStorage.setItem("order-wishlist", JSON.stringify(wishListArray));
+    const mergedData = productsData?.map((item) => {
+      const wishlistItem = wishListArray?.find((w) => w.id === item.id);
+      return wishlistItem
+        ? { ...item, isWishListChecked: true }
+        : { ...item, isWishListChecked: false };
+    });
+    setProductsData(mergedData);
   }, [wishListArray]);
-
-  useEffect(() => {
-    if (wishListArray.length > 0) {
-      const mergedData = productsData?.map((item) => {
-        const wishlistItem = wishListArray?.find((w) => w.id === item.id);
-        return wishlistItem
-          ? { ...item, isWishListChecked: true }
-          : { ...item, isWishListChecked: false };
-      });
-      setProductsData(mergedData);
-    }
-  }, [wishListArray]);
-  // console.log(productsData);
-  // --------------------------------------------------------------------------------------
 
   return (
     <>
       <AppContextSlice.Provider
         value={{
-          showCategory,
           selectedCategory,
           productsData,
           cartArray,

@@ -55,6 +55,7 @@ export const productsJson = [
     name: "Burger",
     pic: burgerPic1,
     price: "20",
+    isWishListChecked: false,
   },
   {
     id: 2,
@@ -62,6 +63,7 @@ export const productsJson = [
     name: "Cheese Burger",
     pic: cheeseBurger,
     price: "25",
+    isWishListChecked: false,
   },
   {
     id: 3,
@@ -69,6 +71,7 @@ export const productsJson = [
     name: "Fish Burger",
     pic: fishBurger,
     price: "22",
+    isWishListChecked: false,
   },
   {
     id: 4,
@@ -76,6 +79,7 @@ export const productsJson = [
     name: "Coney Hot-Dog",
     pic: coneyHotDog,
     price: "18",
+    isWishListChecked: false,
   },
   {
     id: 5,
@@ -83,6 +87,7 @@ export const productsJson = [
     name: "Italian Hot-Dog",
     pic: italianHotDog,
     price: "15",
+    isWishListChecked: false,
   },
   {
     id: 6,
@@ -90,6 +95,7 @@ export const productsJson = [
     name: "Margherita Pizza",
     pic: Margherita,
     price: "40",
+    isWishListChecked: false,
   },
   {
     id: 7,
@@ -97,6 +103,7 @@ export const productsJson = [
     name: "Mexican Pizza",
     pic: Mexican,
     price: "45",
+    isWishListChecked: false,
   },
   {
     id: 8,
@@ -104,6 +111,7 @@ export const productsJson = [
     name: "Pepperoni Pizza",
     pic: Pepperoni,
     price: "60",
+    isWishListChecked: false,
   },
   {
     id: 9,
@@ -111,6 +119,7 @@ export const productsJson = [
     name: "Seafood Pizza",
     pic: Seafood,
     price: "60",
+    isWishListChecked: false,
   },
   {
     id: 10,
@@ -118,6 +127,8 @@ export const productsJson = [
     name: "Misco Ramen",
     pic: Misco,
     price: "8",
+
+    isWishListChecked: false,
   },
   {
     id: 11,
@@ -125,6 +136,7 @@ export const productsJson = [
     name: "Pork Bone Ramen",
     pic: PorkBone,
     price: "12",
+    isWishListChecked: false,
   },
   {
     id: 12,
@@ -132,6 +144,7 @@ export const productsJson = [
     name: "Salt Ramen",
     pic: Salt,
     price: "14",
+    isWishListChecked: false,
   },
   {
     id: 13,
@@ -139,6 +152,7 @@ export const productsJson = [
     name: "Maki Sushi",
     pic: Maki,
     price: "30",
+    isWishListChecked: false,
   },
   {
     id: 14,
@@ -146,6 +160,7 @@ export const productsJson = [
     name: "Temaki Sushi",
     pic: Temaki,
     price: "30",
+    isWishListChecked: false,
   },
   {
     id: 15,
@@ -153,5 +168,6 @@ export const productsJson = [
     name: "Uramaki Sushi",
     pic: Uramaki,
     price: "32",
+    isWishListChecked: false,
   },
 ];
