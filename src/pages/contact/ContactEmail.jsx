@@ -17,6 +17,7 @@ export default function ContactEmail() {
               Name
             </label>
             <input
+              placeholder="Your Name"
               type="text"
               name=""
               id=""
@@ -28,11 +29,23 @@ export default function ContactEmail() {
               Location
             </label>
             <input
+              placeholder="Your Location"
               type="text"
               name=""
               id=""
               className="border w-[100%] rounded-[10px] py-3 px-2 text-[20px] shadow"
             />
+          </div>
+          <div className="p-5 col-span-2">
+            <label htmlFor="" className="text-[25px] text-red-700">
+              Message
+            </label>
+            <textarea
+              placeholder="Your Message"
+              name=""
+              id=""
+              className="border w-[100%] rounded-[10px] py-3 px-2 text-[20px] shadow"
+            ></textarea>
           </div>
         </div>
 
