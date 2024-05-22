@@ -16,7 +16,10 @@ export default function AppContextProvider({ children }) {
   const [orderList, setOrderList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("pizza");
   const [cartArray, setCartArray] = useState([]);
-  const [wishListArray, setWishListArray] = useState([]);
+  const [wishListArray, setWishListArray] = useState(() => {
+    const newData = localStorage.getItem("order-wishlist");
+    return JSON.parse(newData);
+  });
   const [total, setTotal] = useState(0);
 
   // ---------------------------------- Notifications  -----------------------------------
@@ -117,18 +120,15 @@ export default function AppContextProvider({ children }) {
   const handelWishList = (args) => {
     const updatedWishListArray = wishListArray?.find(
       (index) => index.id === args.id
-    )
-      ? wishListArray?.filter((item) => item.id !== args.id)
-      : [...wishListArray, args];
-    setWishListArray(updatedWishListArray);
-    localStorage.setItem(
-      "order-wishlist",
-      JSON.stringify(updatedWishListArray)
     );
-    if (updatedWishListArray?.find((item) => item.id === args.id)) {
-      notifyaddWhishlist();
-    } else {
+
+    if (updatedWishListArray) {
+      const newFiltered = wishListArray.filter((item) => item.id !== args.id);
+      setWishListArray(newFiltered);
       notifyRemoveWhishlist();
+    } else {
+      setWishListArray((prev) => [...prev, args]);
+      notifyaddWhishlist();
     }
   };
 
@@ -152,13 +152,10 @@ export default function AppContextProvider({ children }) {
     setCartArray([]);
   }, [orderList]);
   // ------------------------------------------------------------------------
-  // Get wishlist List
+  // Update wishlist List In Local Storage
   useEffect(() => {
-    const wishList = localStorage.getItem("order-wishlist");
-    if (wishList) {
-      setWishListArray(JSON.parse(wishList));
-    }
-  }, []);
+    localStorage.setItem("order-wishlist", JSON.stringify(wishListArray));
+  }, [wishListArray]);
   // ------------------------------------------------------------------------
   // Merged Poducts and Wishlist
   useEffect(() => {
