@@ -6,8 +6,11 @@ import { FaLocationDot } from "react-icons/fa6";
 export default function Contacts() {
   return (
     <>
-      <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 h-[300px] p-5">
-        <div className="col-span-1  p-2">
+      <div className="gap-3 p-5 flex justify-center items-center flex-col">
+        <div className="mb-5">
+          <h1 className="text-[25px] font-semibold text-red-600">Contact Us</h1>
+        </div>
+        <div className="p-2 md:w-[350px] w-[100%]">
           <div className="flex justify-center items-center sm:text-[30px] text-[20px] font-semibold bg-red-600 text-white rounded-md py-2">
             Phone
           </div>
@@ -25,7 +28,7 @@ export default function Contacts() {
           </div>
         </div>
 
-        <div className="col-span-1  p-2">
+        <div className="p-2 md:w-[350px] w-[100%]">
           <div className="flex justify-center items-center sm:text-[30px] text-[20px] font-semibold bg-red-600 text-white rounded-md py-2">
             Email
           </div>
@@ -37,7 +40,7 @@ export default function Contacts() {
           </div>
         </div>
 
-        <div className="col-span-1  p-2">
+        <div className="p-2 md:w-[350px] w-[100%]">
           <div className="flex justify-center items-center sm:text-[30px] text-[20px] font-semibold bg-red-600 text-white rounded-md py-2">
             Address
           </div>
