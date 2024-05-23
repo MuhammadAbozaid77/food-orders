@@ -8,9 +8,9 @@ export default function Category() {
   return (
     <>
       <motion.div
-        initial={{ y: -20 }}
-        animate={{ y: 0 }}
-        transition={{ ease: "easeOut", duration: 1 }}
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
         className="flex justify-start gap-3 items-center"
       >
         <span className="text-red-600 sm:text-[80px] text-[45px]">

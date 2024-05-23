@@ -1,6 +1,8 @@
 //
 import { useNavigate } from "react-router-dom";
 import pic44 from "../../../assets/socialmedia/pic44.jpg";
+import { motion } from "framer-motion";
+
 export default function HomePicSection() {
   const navigate = useNavigate();
 
@@ -10,7 +12,12 @@ export default function HomePicSection() {
   return (
     <>
       <div className="w-[100%] lg:px-[100px] md:p-[50px] sm:p-[40px] p-[20px] px-[20px] py-2 flex justify-between items-center lg:h-[450px] h-auto gap-5 lg:flex-row flex-col">
-        <div className="h-[100%]  rounded-[20px] w-[100%]">
+        <motion.div
+          initial={{ scale: 0.7 }}
+          animate={{ scale: 1 }}
+          transition={{ ease: "easeOut", duration: 0.5 }}
+          className="h-[100%]  rounded-[20px] w-[100%]"
+        >
           <h1 className="md:text-[50px] text-[30px] text-red-500 font-bold block">
             Fatest Delivery
           </h1>
@@ -31,7 +38,7 @@ export default function HomePicSection() {
           >
             Order Now
           </button>
-        </div>
+        </motion.div>
         <div className="lg:h-[100%] h-[400px]  overflow-hidden  w-[100%]  flex justify-center items-center">
           <img src={pic44} alt="" className="h-[100%]" />
         </div>

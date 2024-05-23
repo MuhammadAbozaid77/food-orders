@@ -1,7 +1,7 @@
+//
 import WishListItem from "./WishListItem";
 import { BsFillBox2HeartFill } from "react-icons/bs";
 
-//
 export default function WishListProducts({ data, handelWishList }) {
   return (
     <>

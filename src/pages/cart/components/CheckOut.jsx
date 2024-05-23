@@ -3,12 +3,17 @@ import { AppContextSlice } from "../../../context/AppContext";
 import { useContext } from "react";
 import CheckForm from "./CheckForm";
 import { TfiClose } from "react-icons/tfi";
+import { motion } from "framer-motion";
+
 export default function CheckOut() {
   const { handelShowCheckoutModal } = useContext(AppContextSlice);
 
   return (
     <>
-      <div
+      <motion.div
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ ease: "easeOut", duration: 0.3 }}
         className="w-[400px] h-[550px] bg-white p-3 rounded-[10px]"
         onClick={(e) => e.stopPropagation()}
       >
@@ -25,7 +30,7 @@ export default function CheckOut() {
           </div>
           <CheckForm />
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

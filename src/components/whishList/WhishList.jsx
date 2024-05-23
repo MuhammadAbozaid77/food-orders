@@ -1,10 +1,10 @@
+//
 import { TfiClose } from "react-icons/tfi";
 import WishListProducts from "./WishListProducts";
 import { BsFillBox2HeartFill } from "react-icons/bs";
 import { AppContextSlice } from "../../context/AppContext";
 import { useContext } from "react";
 
-//
 export default function WhishList({ setShowWishList }) {
   const { wishListArray, handelWishList } = useContext(AppContextSlice);
 

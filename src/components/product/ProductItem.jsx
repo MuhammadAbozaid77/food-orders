@@ -6,9 +6,9 @@ export default function ProductItem({ item, handelWishList }) {
   return (
     <>
       <motion.div
-        initial={{ x: "50vw" }}
-        animate={{ x: "0vw" }}
-        transition={{ ease: "easeOut", duration: 1 }}
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
         className="relative rounded-[10px] shadow-lg  h-[380px] lg:w-[260px] md:w-[250px] w-[280px] flex justify-center flex-col border border-slate-300"
       >
         <div className="min-h-[250px] flex justify-center items-center border-b ">

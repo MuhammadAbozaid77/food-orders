@@ -7,13 +7,19 @@ import { motion } from "framer-motion";
 
 export default function Product() {
   const { productsData, handelWishList } = useContext(AppContextSlice);
+  // <motion.div
+  // initial={{ y: -20 }}
+  // animate={{ y: 0 }}
+  // transition={{ ease: "easeOut", duration: 1 }}
+  // >
+  // </motion.div>
 
   return (
     <>
       <motion.div
-        initial={{ y: -20 }}
-        animate={{ y: 0 }}
-        transition={{ ease: "easeOut", duration: 1 }}
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
         className="flex justify-start gap-3 items-center border-t mt-[50px] pt-[30px] border-gray-300"
       >
         <span className="text-red-600 sm:text-[80px] text-[45px]">

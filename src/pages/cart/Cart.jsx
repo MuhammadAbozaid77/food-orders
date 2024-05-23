@@ -4,6 +4,7 @@ import CartDetails from "./components/CartDetails";
 import CartItems from "./components/CartItems";
 import { AppContextSlice } from "../../context/AppContext";
 import noitems from "../../assets/noitems.png";
+import { motion } from "framer-motion";
 
 export default function Cart() {
   const { cartArray, handelTotal } = useContext(AppContextSlice);
@@ -27,7 +28,12 @@ export default function Cart() {
             </div>
           </>
         ) : (
-          <div className="flex justify-center items-center flex-col">
+          <motion.div
+            initial={{ scale: 0.7 }}
+            animate={{ scale: 1 }}
+            transition={{ ease: "easeOut", duration: 0.3 }}
+            className="flex justify-center items-center flex-col"
+          >
             <div className="h-[300px]">
               <img src={noitems} alt="" className="h-[100%]" />
             </div>
@@ -36,7 +42,7 @@ export default function Cart() {
                 Your Cart Is Empty
               </h1>
             </div>
-          </div>
+          </motion.div>
         )}
       </div>
     </>

@@ -8,9 +8,9 @@ export default function CategoryItem({ item }) {
   return (
     <>
       <motion.div
-        initial={{ x: "50vw" }}
-        animate={{ x: "0vw" }}
-        transition={{ ease: "easeOut", duration: 1 }}
+        initial={{ scale: 0.8 }}
+        animate={{ scale: 1 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
         onClick={() => setSelectedCategory(item.name)}
         className={` ${
           selectedCategory === item.name
