@@ -12,6 +12,7 @@ export default function AppContextProvider({ children }) {
   const [showOpenCheckout, setShowOpenCheckout] = useState(false);
   const [showUserAuth, setShowUserAuth] = useState(false);
   // ---------------------------------- Data Structure -----------------------------------
+  const [searchData, setSearchData] = useState([]);
   const [productsData, setProductsData] = useState([]);
   const [orderList, setOrderList] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState("pizza");
@@ -197,6 +198,8 @@ export default function AppContextProvider({ children }) {
           setShowWishList,
           handelWishList,
           wishListArray,
+          setSearchData,
+          searchData,
         }}
       >
         {children}

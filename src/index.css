@@ -33,24 +33,16 @@ footer h1::after {
 }
 
 
-
-.loader {
-  width: 48px;
-  height: 48px;
-  border: 5px solid black;
-  border-bottom-color: #FF3D00;
-  border-radius: 50%;
-  display: inline-block;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
+.spinner {
+  width: 11.2px;
+  height: 11.2px;
+  animation: spinner-z355kx 1s infinite linear;
+  border-radius: 11.2px;
+  box-shadow: 28px 0px 0 0 red, 17.4px 21.8px 0 0 red, -6.2px 27.2px 0 0 red, -25.2px 12px 0 0 red, -25.2px -12px 0 0 red, -6.2px -27.2px 0 0 red, 17.4px -21.8px 0 0 red;
 }
 
-@keyframes rotation {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
+@keyframes spinner-z355kx {
+  to {
     transform: rotate(360deg);
   }
 }

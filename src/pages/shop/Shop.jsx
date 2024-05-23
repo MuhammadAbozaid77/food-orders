@@ -19,14 +19,16 @@ export default function Shop() {
 
   return (
     <>
-      <div className="px-[40px] pb-[100px] pt-[30px] border">
-        <Category />
+      <div className="px-[40px] pb-[100px] pt-[30px]">
         {loading ? (
           <div className="mt-[50px] w-[100%] flex justify-center">
             <Loader />
           </div>
         ) : (
-          <Product />
+          <>
+            <Category />
+            <Product />
+          </>
         )}
       </div>
     </>

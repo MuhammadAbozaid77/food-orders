@@ -1,8 +1,8 @@
 //
 import { TiPlus } from "react-icons/ti";
-
 import { useContext } from "react";
 import { AppContextSlice } from "../../context/AppContext";
+import { motion } from "framer-motion";
 
 export default function ProductPrice({ item }) {
   const { handelSelectProduct } = useContext(AppContextSlice);

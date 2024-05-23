@@ -1,10 +1,16 @@
 import ProductPrice from "./ProductPrice";
 import { FiHeart } from "react-icons/fi";
+import { motion } from "framer-motion";
 
 export default function ProductItem({ item, handelWishList }) {
   return (
     <>
-      <div className="relative rounded-[10px] shadow-lg  h-[380px] lg:w-[260px] md:w-[250px] w-[280px] flex justify-center flex-col border border-slate-300">
+      <motion.div
+        initial={{ x: "50vw" }}
+        animate={{ x: "0vw" }}
+        transition={{ ease: "easeOut", duration: 1 }}
+        className="relative rounded-[10px] shadow-lg  h-[380px] lg:w-[260px] md:w-[250px] w-[280px] flex justify-center flex-col border border-slate-300"
+      >
         <div className="min-h-[250px] flex justify-center items-center border-b ">
           <img src={item?.pic} alt="" className="h-[100%] p-3" />
         </div>
@@ -21,7 +27,7 @@ export default function ProductItem({ item, handelWishList }) {
         >
           <FiHeart size={25} />
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

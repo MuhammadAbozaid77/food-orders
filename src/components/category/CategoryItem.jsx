@@ -1,12 +1,16 @@
 import { useContext } from "react";
 import { AppContextSlice } from "../../context/AppContext";
+import { motion } from "framer-motion";
 
 export default function CategoryItem({ item }) {
   const { setSelectedCategory, selectedCategory } = useContext(AppContextSlice);
 
   return (
     <>
-      <div
+      <motion.div
+        initial={{ x: "50vw" }}
+        animate={{ x: "0vw" }}
+        transition={{ ease: "easeOut", duration: 1 }}
         onClick={() => setSelectedCategory(item.name)}
         className={` ${
           selectedCategory === item.name
@@ -24,7 +28,7 @@ export default function CategoryItem({ item }) {
         >
           <h3> {item.name} </h3>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

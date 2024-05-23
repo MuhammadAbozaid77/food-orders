@@ -1,17 +1,24 @@
 //
-import WrapperSection from "../../../components/ui/WrapperSection";
 import pic from "../../../assets/pic1.jpg";
 import pic2 from "../../../assets/pic2.jpg";
 import pic3 from "../../../assets/pic3.jpg";
 import { useState } from "react";
+import { motion } from "framer-motion";
+
 export default function FoodPics() {
   const [isHovered, setIsHovered] = useState(false);
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
 
+  // <motion.div
+  //   initial={{ y: -20 }}
+  //   animate={{ y: 0 }}
+  //   transition={{ ease: "easeOut", duration: 1 }}
+  // ></motion.div>;
+
   return (
     <>
-      <WrapperSection>
+      <div className="lg:px-[80px] md:px-[50px] sm:px-[30px]  px-[20px]">
         <div className="flex justify-center items-center bg-slate-300 gap-10 md:p-[50px] sm:p-[40px] p-[20px] flex-wrap rounded-lg my-[50px]">
           <div
             className=" bg-white p-5 h-[200px] flex justify-end items-center relative rounded-lg shadow-lg border"
@@ -91,7 +98,7 @@ export default function FoodPics() {
             </div>
           </div>
         </div>
-      </WrapperSection>
+      </div>
     </>
   );
 }

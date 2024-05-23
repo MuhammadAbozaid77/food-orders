@@ -10,6 +10,7 @@ import SideBar from "../components/layouts/header/SideBar";
 import Search from "../components/search/Search";
 import { ToastContainer } from "react-toastify";
 import WhishList from "../components/whishList/WhishList";
+import { motion } from "framer-motion";
 
 export default function AppLayout() {
   const { pathname } = useLocation();
@@ -20,7 +21,6 @@ export default function AppLayout() {
     showOpenCheckout,
     showSideBar,
     setShowSideBar,
-    setShowSearchPage,
     showSearchPage,
     showWishList,
     setShowWishList,
@@ -57,9 +57,14 @@ export default function AppLayout() {
           )}
 
           {showSideBar && (
-            <div className="fixed inset-0   bg-black/90 flex justify-start h-[100vh] w-[300px] z-[800]">
+            <motion.div
+              className="fixed inset-0   bg-black/90 flex justify-start h-[100vh] w-[300px] z-[800]"
+              initial={{ x: -100 }}
+              animate={{ x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <SideBar setShowSideBar={setShowSideBar} />
-            </div>
+            </motion.div>
           )}
 
           <div
@@ -67,7 +72,7 @@ export default function AppLayout() {
               showSearchPage ? "top-0" : "-top-[100%]"
             } left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow z-[1000]`}
           >
-            <Search setShowSearchPage={setShowSearchPage} />
+            <Search />
           </div>
 
           <div

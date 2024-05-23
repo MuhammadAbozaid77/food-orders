@@ -1,8 +1,8 @@
 //
 export default function Loader() {
   return (
-    <div>
-      <span className="loader"></span>
+    <div className="mt-[80px]">
+      <div className="spinner"></div>
     </div>
   );
 }

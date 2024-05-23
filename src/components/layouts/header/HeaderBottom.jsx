@@ -6,8 +6,14 @@ import { AppContextSlice } from "../../../context/AppContext";
 import { useContext } from "react";
 
 export default function HeaderBottom() {
-  const { cartArray, setShowSearchPage, handelShowUserAuth, setShowWishList } =
-    useContext(AppContextSlice);
+  const {
+    cartArray,
+    setShowSearchPage,
+    handelShowUserAuth,
+    setShowWishList,
+    wishListArray,
+    searchData,
+  } = useContext(AppContextSlice);
   const { pathname } = useLocation();
 
   return (
@@ -32,10 +38,15 @@ export default function HeaderBottom() {
           <FiUser size={20} />
         </Link>
         <div
-          className="hover:bg-[#ffca3c] rounded-full duration-150 p-2 "
+          className="hover:bg-[#ffca3c] rounded-full duration-150 p-2 relative"
           onClick={() => setShowWishList(true)}
         >
           <FiHeart size={20} />
+          {wishListArray?.length > 0 && (
+            <span className="w-[15px] h-[15px] bg-red-600 text-[10px] text-white rounded-full top-0 -right-[5px] absolute flex justify-center items-center">
+              {wishListArray?.length}
+            </span>
+          )}
         </div>
         <Link
           to={"/cart"}
@@ -51,10 +62,15 @@ export default function HeaderBottom() {
           )}
         </Link>
         <div
-          className="hover:bg-[#ffca3c] rounded-full duration-150 p-2 "
+          className="hover:bg-[#ffca3c] rounded-full duration-150 p-2 relative"
           onClick={() => setShowSearchPage(true)}
         >
           <FiSearch size={20} />
+          {searchData?.length > 0 && (
+            <span className="w-[15px] h-[15px] bg-red-600 text-[10px] text-white rounded-full top-0 -right-[1px] absolute flex justify-center items-center">
+              {searchData?.length}
+            </span>
+          )}
         </div>
       </div>
     </>

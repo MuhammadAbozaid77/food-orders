@@ -1,22 +1,24 @@
 //
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { TfiClose } from "react-icons/tfi";
 import { MdFastfood } from "react-icons/md";
 import { productsJson } from "../../assets/categoriesData";
 import SearchProduct from "./SearchProduct";
+import { AppContextSlice } from "../../context/AppContext";
 
-export default function Search({ setShowSearchPage }) {
+export default function Search() {
+  const { searchData, setSearchData, setShowSearchPage } =
+    useContext(AppContextSlice);
   const [searchText, setSearchText] = useState("");
-  const [data, setData] = useState([]);
 
   useEffect(() => {
     const searchedData = productsJson.filter((item) =>
       item?.category.toLowerCase().includes(searchText.toLowerCase())
     );
     if (searchText === "") {
-      setData([]);
+      setSearchData([]);
     } else {
-      setData(searchedData);
+      setSearchData(searchedData);
     }
   }, [searchText]);
 
@@ -59,7 +61,7 @@ export default function Search({ setShowSearchPage }) {
         </div>
 
         <div className="flex justify-center items-center">
-          <SearchProduct data={data} />
+          <SearchProduct data={searchData} />
         </div>
       </div>
     </>
