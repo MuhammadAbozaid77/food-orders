@@ -1,7 +1,5 @@
 import { useState } from "react";
 
-function useGeolocation() {}
-
 export default function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [countClicks, setCountClicks] = useState(0);
@@ -34,7 +32,11 @@ export default function App() {
 
   return (
     <div>
-      <button onClick={getPosition} disabled={isLoading}>
+      <button
+        onClick={getPosition}
+        disabled={isLoading}
+        className="border p-1 rounded-[5px] bg-blue-500"
+      >
         Get my position
       </button>
 
