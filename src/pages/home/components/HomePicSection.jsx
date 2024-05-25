@@ -1,7 +1,7 @@
 //
 import { useNavigate } from "react-router-dom";
 import pic44 from "../../../assets/socialmedia/pic44.jpg";
-import { motion } from "framer-motion";
+import { motion, useScroll } from "framer-motion";
 
 export default function HomePicSection() {
   const navigate = useNavigate();
@@ -15,7 +15,7 @@ export default function HomePicSection() {
         <motion.div
           initial={{ scale: 0.7 }}
           animate={{ scale: 1 }}
-          transition={{ ease: "easeOut", duration: 0.5 }}
+          transition={{ ease: "easeOut", duration: 0.8 }}
           className="h-[100%]  rounded-[20px] w-[100%]"
         >
           <h1 className="md:text-[50px] text-[30px] text-red-500 font-bold block">
@@ -39,9 +39,14 @@ export default function HomePicSection() {
             Order Now
           </button>
         </motion.div>
-        <div className="lg:h-[100%] h-[400px]  overflow-hidden  w-[100%]  flex justify-center items-center">
+        <motion.div
+          initial={{ scale: 0.7 }}
+          animate={{ scale: 1 }}
+          transition={{ ease: "easeOut", duration: 0.8 }}
+          className="lg:h-[100%] h-[400px]  overflow-hidden  w-[100%]  flex justify-center items-center"
+        >
           <img src={pic44} alt="" className="h-[100%]" />
-        </div>
+        </motion.div>
       </div>
     </>
   );

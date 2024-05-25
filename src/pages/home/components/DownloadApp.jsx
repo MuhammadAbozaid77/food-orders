@@ -1,13 +1,19 @@
 //
 import { FaGooglePlay } from "react-icons/fa6";
 import { ImAndroid } from "react-icons/im";
+import { motion } from "framer-motion";
 
 export default function DownloadApp() {
   return (
     <>
       <div className="w-[100%] lg:px-[100px] px-[20px] mt-[50px] gap-5 bg-gray-400 py-[50px]">
         <div className="bg-gray-200 rounded-[15px] md:flex-row flex-col gap-5 flex justify-between items-center py-5 px-[50px] shadow-2xl border-t border-gray-200">
-          <div className="flex justify-center items-center w-[100%] my-5">
+          <motion.div
+            initial={{ scale: 0.7 }}
+            animate={{ scale: 1 }}
+            transition={{ ease: "easeOut", duration: 0.8 }}
+            className="flex justify-center items-center w-[100%] my-5"
+          >
             <div className="w-[100%]">
               <div className="sm:block flex flex-col justify-center items-center">
                 <h1 className="md:text-[35px] text-[30px] font-semibold text-gray-800 block leading-[25px]">
@@ -32,8 +38,14 @@ export default function DownloadApp() {
                 </button>
               </div>
             </div>
-          </div>
-          <div className="w-[100%]">
+          </motion.div>
+
+          <motion.div
+            initial={{ scale: 0.7 }}
+            animate={{ scale: 1 }}
+            transition={{ ease: "easeOut", duration: 0.8 }}
+            className="w-[100%]"
+          >
             <p className="text-[20px] text-gray-500">
               A mobile application or app is a computer program or software
               application designed to run on a mobile device such as a phone,
@@ -41,7 +53,7 @@ export default function DownloadApp() {
               program or software application designed to run on a mobile device
               such as a phone, tablet, or watch.
             </p>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>

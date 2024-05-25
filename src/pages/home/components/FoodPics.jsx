@@ -10,17 +10,14 @@ export default function FoodPics() {
   const [isHovered2, setIsHovered2] = useState(false);
   const [isHovered3, setIsHovered3] = useState(false);
 
-  // <motion.div
-  //   initial={{ y: -20 }}
-  //   animate={{ y: 0 }}
-  //   transition={{ ease: "easeOut", duration: 1 }}
-  // ></motion.div>;
-
   return (
     <>
       <div className="lg:px-[80px] md:px-[50px] sm:px-[30px]  px-[20px]">
-        <div className="flex justify-center items-center bg-slate-300 gap-10 md:p-[50px] sm:p-[40px] p-[20px] flex-wrap rounded-lg my-[50px]">
-          <div
+        <div className="flex justify-center items-center bg-slate-200 gap-10 md:p-[50px] sm:p-[40px] p-[20px] flex-wrap rounded-lg my-[50px]">
+          <motion.div
+            initial={{ scale: 0.7 }}
+            animate={{ scale: 1 }}
+            transition={{ ease: "easeOut", duration: 0.8 }}
             className=" bg-white p-5 h-[200px] flex justify-end items-center relative rounded-lg shadow-lg border"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -44,9 +41,12 @@ export default function FoodPics() {
                 Lorem ipsum dolor sit amet.
               </span>
             </div>
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div
+            initial={{ scale: 0.7 }}
+            animate={{ scale: 1 }}
+            transition={{ ease: "easeOut", duration: 0.8 }}
             className=" bg-white p-5 h-[200px] flex justify-end items-center relative rounded-lg shadow-lg border"
             onMouseEnter={() => setIsHovered2(true)}
             onMouseLeave={() => setIsHovered2(false)}
@@ -70,9 +70,12 @@ export default function FoodPics() {
                 Lorem ipsum dolor sit amet.
               </span>
             </div>
-          </div>
+          </motion.div>
 
-          <div
+          <motion.div
+            initial={{ scale: 0.7 }}
+            animate={{ scale: 1 }}
+            transition={{ ease: "easeOut", duration: 0.8 }}
             className=" bg-white p-5 h-[200px] flex justify-end items-center relative rounded-lg shadow-lg border"
             onMouseEnter={() => setIsHovered3(true)}
             onMouseLeave={() => setIsHovered3(false)}
@@ -96,7 +99,7 @@ export default function FoodPics() {
                 Lorem ipsum dolor sit amet.
               </span>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </>
