@@ -19,12 +19,22 @@ export default function Cart() {
         {cartArray?.length > 0 ? (
           <>
             <div className="flex justify-center lg:flex-row flex-col lg:w-[900px] w-[100%] gap-5">
-              <div className="lg:w-[60%] w-[100%] border rounded-[10px] p-5 shadow">
+              <motion.div
+                initial={{ scale: 0.7 }}
+                animate={{ scale: 1 }}
+                transition={{ ease: "easeOut", duration: 0.5 }}
+                className="lg:w-[60%] w-[100%] border rounded-[10px] p-5 shadow"
+              >
                 <CartItems />
-              </div>
-              <div className="lg:w-[40%] w-[100%] border rounded-[10px] p-5 shadow">
+              </motion.div>
+              <motion.div
+                initial={{ scale: 0.7 }}
+                animate={{ scale: 1 }}
+                transition={{ ease: "easeOut", duration: 0.5 }}
+                className="lg:w-[40%] w-[100%] border rounded-[10px] p-5 shadow"
+              >
                 <CartDetails />
-              </div>
+              </motion.div>
             </div>
           </>
         ) : (

@@ -1,10 +1,15 @@
+import { motion } from "framer-motion";
 import { FiHeart } from "react-icons/fi";
-
 //
 export default function WishListItem({ item, handelWishList }) {
   return (
     <>
-      <div className="h-[100px] shadow-lg  border mb-2 rounded-[10px] p-2 w-[100%] flex items-center justify-start gap-5">
+      <motion.div
+        initial={{ scale: 0.7 }}
+        animate={{ scale: 1 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+        className="h-[100px] shadow-lg  border mb-2 rounded-[10px] p-2 w-[100%] flex items-center justify-start gap-5"
+      >
         <div className="flex justify-center items-center h-[100%] w-[100px] border-t border-gray-100 shadow-md">
           <img src={item.pic} alt="" className=" h-[100%]" />
         </div>
@@ -24,7 +29,7 @@ export default function WishListItem({ item, handelWishList }) {
             </button>
           </div>
         </div>
-      </div>
+      </motion.div>
     </>
   );
 }

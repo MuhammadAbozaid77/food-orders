@@ -6,6 +6,7 @@ import {
   MdOutlineArrowBackIos,
   MdDeliveryDining,
 } from "react-icons/md";
+import { motion } from "framer-motion";
 
 export default function Orders() {
   const { orderList } = useContext(AppContextSlice);
@@ -42,14 +43,19 @@ export default function Orders() {
       </div>
       {orderList.length === 0 ? (
         <>
-          <div className="px-[40px] pb-[50px] pt-[30px] flex justify-center items-center flex-col">
+          <motion.div
+            initial={{ scale: 0.7 }}
+            animate={{ scale: 1 }}
+            transition={{ ease: "easeOut", duration: 0.5 }}
+            className="px-[40px] pb-[50px] pt-[30px] flex justify-center items-center flex-col"
+          >
             <span className="text-gray-300 ">
               <MdDeliveryDining size={100} />
             </span>
             <h1 className="text-[20px] mt-[10px] text-gray-500">
               No Orders Submitted Yet
             </h1>
-          </div>
+          </motion.div>
         </>
       ) : (
         <>

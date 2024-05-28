@@ -1,5 +1,4 @@
 //
-import { IoMdClose } from "react-icons/io";
 import { AppContextSlice } from "../../context/AppContext";
 import { useContext } from "react";
 import { FcGoogle } from "react-icons/fc";
@@ -21,7 +20,7 @@ export default function UserAuth() {
         </div>
 
         <div
-          className="md:w-[400px] w-[100%] lg:h-[70vh] h-[100vh] bg-white p-5 border shadow-lg mt-[20px] rounded-lg border-gray-300"
+          className="md:w-[400px] w-[100%] lg:h-[700px] h-[100vh] bg-white p-5 border shadow-lg mt-[20px] rounded-lg border-gray-300"
           onClick={(e) => e.stopPropagation()}
         >
           <div className="mt-5 flex justify-center items-center flex-col">
@@ -34,7 +33,7 @@ export default function UserAuth() {
             </p>
           </div>
 
-          {/* <div className="mt-5 p-3 flex justify-center items-center ">
+          <div className="mt-5 p-3 flex justify-center items-center ">
             <button className="capitalize flex justify-center items-center p-3 w-[100%] border rounded shadow">
               <span>
                 <FcGoogle />
@@ -43,7 +42,7 @@ export default function UserAuth() {
                 SignUp With Google
               </span>
             </button>
-          </div> */}
+          </div>
 
           <div className="my-5">OR</div>
 

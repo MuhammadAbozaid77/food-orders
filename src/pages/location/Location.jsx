@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { FaSearchLocation } from "react-icons/fa";
 //
@@ -64,7 +65,12 @@ export default function Location() {
           <p>You requested position {countClicks} times</p>
         </div>
       </div> */}
-      <div className="flex justify-center items-center p-10 h-[600px]">
+      <motion.div
+        initial={{ scale: 0.7 }}
+        animate={{ scale: 1 }}
+        transition={{ ease: "easeOut", duration: 0.5 }}
+        className="flex justify-center items-center p-10 h-[600px]"
+      >
         <h1 className="flex justify-center items-center flex-col">
           <span className="text-green-500 md:text-[120px] text-[80px]">
             <HiMiniCodeBracketSquare />
@@ -73,7 +79,7 @@ export default function Location() {
             Page Under Development
           </span>
         </h1>
-      </div>
+      </motion.div>
     </>
   );
 }
