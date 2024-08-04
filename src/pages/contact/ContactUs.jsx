@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 export default function ContactUs() {
   return (
     <>
-      <div className="md:p-[50px] sm:p-[40px] p-[20px] flex">
+      <div className="md:p-[50px] sm:p-[40px] p-[20px]">
         <motion.div
           initial={{ scale: 0.7 }}
           animate={{ scale: 1 }}

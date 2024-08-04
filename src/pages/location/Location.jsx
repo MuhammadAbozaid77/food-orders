@@ -1,85 +1,41 @@
-import { motion } from "framer-motion";
-import { useState } from "react";
-import { FaSearchLocation } from "react-icons/fa";
+import { MapContainer, Marker, Popup, TileLayer } from "react-leaflet";
+import ChangeMapPosition from "./ChangeMapPosition";
+import { useGeolocation } from "../../hooks/useGeolocation";
 //
-import { HiMiniCodeBracketSquare } from "react-icons/hi2";
 
 export default function Location() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [countClicks, setCountClicks] = useState(0);
-  const [position, setPosition] = useState({});
-  const [error, setError] = useState(null);
-
-  const { lat, lng } = position;
-
-  function getPosition() {
-    setCountClicks((count) => count + 1);
-
-    if (!navigator.geolocation)
-      return setError("Your browser does not support geolocation");
-
-    setIsLoading(true);
-    navigator.geolocation.getCurrentPosition(
-      (pos) => {
-        setPosition({
-          lat: pos.coords.latitude,
-          lng: pos.coords.longitude,
-        });
-        setIsLoading(false);
-      },
-      (error) => {
-        setError(error.message);
-        setIsLoading(false);
-      }
-    );
-  }
+  const position = [51.505, -0.09];
+  // const { isLoading, positionGeoLocation, error, getPosition } =
+  //   useGeolocation();
 
   return (
-    <>
-      {/* <div className="p-10">
-        <div>
+    <div className="flex justify-center items-center h-[100vh]">
+      <div className=" h-[70vh] w-[80%]  border-[10px] rounded-lg border-gray-500">
+        {/* {!positionGeoLocation && (
           <button
+            type="position"
+            // icon={<ImLocation2 size={25} />}
+            className={
+              "absolute bottom-[6%] left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-red-800 mb-5 z-[1500] min-w-[300px] text-center"
+            }
             onClick={getPosition}
-            disabled={isLoading}
-            className="border p-2 bg-green-600 rounded-[5px] text-white capitalize font-semibold"
           >
-            <FaSearchLocation />
-            Get my Location
+            Select Current Location
+            {isLoading ? <SpinnerLoading /> : "Select Current Location"}
           </button>
+        )} */}
+        <MapContainer center={position} zoom={10} scrollWheelZoom={true}>
+          <TileLayer
+            attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            url="https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png"
+          />
+          <Marker position={position}>
+            <Popup>gggg</Popup>
+          </Marker>
 
-          {isLoading && <p>Loading position...</p>}
-          {error && <p>{error}</p>}
-          {!isLoading && !error && lat && lng && (
-            <p>
-              Your GPS position:{" "}
-              <a
-                target="_blank"
-                rel="noreferrer"
-                href={`https://www.openstreetmap.org/#map=16/${lat}/${lng}`}
-              >
-                {lat}, {lng}
-              </a>
-            </p>
-          )}
-
-          <p>You requested position {countClicks} times</p>
-        </div>
-      </div> */}
-      <motion.div
-        initial={{ scale: 0.7 }}
-        animate={{ scale: 1 }}
-        transition={{ ease: "easeOut", duration: 0.5 }}
-        className="flex justify-center items-center p-10 h-[600px]"
-      >
-        <h1 className="flex justify-center items-center flex-col">
-          <span className="text-green-500 md:text-[120px] text-[80px]">
-            <HiMiniCodeBracketSquare />
-          </span>
-          <span className="md:text-[40px] text-[20px]  text-gray-500 font-semibold text-center">
-            Page Under Development
-          </span>
-        </h1>
-      </motion.div>
-    </>
+          <ChangeMapPosition position={position} />
+        </MapContainer>
+      </div>
+    </div>
   );
 }

@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import logo from "../../../assets/logo.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { useContext } from "react";
@@ -11,16 +11,16 @@ export default function Navbar() {
   return (
     <>
       <div className="flex justify-between items-center md:p-[20px] px-[30px] lg:w-[1000px] w-[100%] relative">
-        <ul className="w-[100%]  hidden md:flex justify-start items-center gap-5 font-semibold  text-white uppercase text-[18px]">
-          <Link to={""}> Home </Link>
-          <Link to={"/about"}> About </Link>
-          <Link to={"/shop"}> Menu </Link>
-        </ul>
-
-        {/*---------------- In Medium Size ----------------*/}
         <div className="md:w-[250px] w-[120px]">
-          <img src={logo} alt="" className="w-[100%]" />
+          <img src={logo} alt="" className="w-[50%]" />
         </div>
+        <ul className="hidden md:flex justify-start items-center gap-5 font-semibold  text-white uppercase text-[18px]">
+          <NavLink to={""}> Home </NavLink>
+          <NavLink to={"/shop"}> Menu </NavLink>
+          <NavLink to={"/orders"}> Orders </NavLink>
+          <NavLink to={"/location"}> Location </NavLink>
+          <NavLink to={"/contact"}> Contact </NavLink>
+        </ul>
 
         <div
           className="flex justify-center items-center md:hidden w-[50px] h-[50px] bg-black rounded-full text-white cursor-pointer"
@@ -28,12 +28,6 @@ export default function Navbar() {
         >
           <GiHamburgerMenu size={30} />
         </div>
-
-        <ul className="w-[100%] hidden md:flex justify-end items-center gap-5 text-white font-semibold uppercase text-[18px]">
-          <Link to={"/orders"}> Orders </Link>
-          <Link to={"/location"}> Location </Link>
-          <Link to={"/contact"}> Contact </Link>
-        </ul>
       </div>
     </>
   );

@@ -6,13 +6,13 @@ import { motion } from "framer-motion";
 export default function DownloadApp() {
   return (
     <>
-      <div className="w-[100%] lg:px-[100px] px-[20px] mt-[50px] gap-5 bg-gray-400 py-[50px]">
+      <div className="w-[100%] lg:px-[100px] px-[20px] mt-[50px] gap-5 bg-red-600 py-[50px]">
         <div className="bg-gray-200 rounded-[15px] md:flex-row flex-col gap-5 flex justify-between items-center py-5 px-[50px] shadow-2xl border-t border-gray-200">
           <motion.div
             initial={{ scale: 0.7 }}
             animate={{ scale: 1 }}
             transition={{ ease: "easeOut", duration: 0.8 }}
-            className="flex justify-center items-center w-[100%] my-5"
+            className="flex justify-center items-center w-[100%] my-[50px]"
           >
             <div className="w-[100%]">
               <div className="sm:block flex flex-col justify-center items-center">

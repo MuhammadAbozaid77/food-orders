@@ -70,7 +70,7 @@ export default function AppLayout() {
           <div
             className={`fixed ${
               showSearchPage ? "top-0" : "-top-[100%]"
-            } left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow z-[1000]`}
+            } overflow-y-scroll left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow z-[1000]`}
           >
             <Search />
           </div>
@@ -78,7 +78,7 @@ export default function AppLayout() {
           <div
             className={`fixed ${
               showWishList ? "top-0" : "-top-[100%]"
-            } left-0 right-0 bottom-0 bg-white h-[100vh] duration-700  border-b border-gray-500 shadow z-[1000]`}
+            } overflow-y-scroll left-0 right-0 bottom-0 bg-white h-[100vh] duration-700  border-b border-gray-500 shadow z-[1000]`}
           >
             <WhishList setShowWishList={setShowWishList} />
           </div>
@@ -86,7 +86,7 @@ export default function AppLayout() {
           <div
             className={`fixed ${
               showUserAuth ? "top-0" : "-top-[100%]"
-            } left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow z-[1000]`}
+            }  overflow-y-scroll left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow z-[1000]`}
           >
             <UserAuth />
           </div>

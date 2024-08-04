@@ -5,14 +5,8 @@ import { useContext } from "react";
 import { AppContextSlice } from "../../context/AppContext";
 import { motion } from "framer-motion";
 
-export default function Product() {
-  const { productsData, handelWishList } = useContext(AppContextSlice);
-  // <motion.div
-  // initial={{ y: -20 }}
-  // animate={{ y: 0 }}
-  // transition={{ ease: "easeOut", duration: 1 }}
-  // >
-  // </motion.div>
+export default function Product({ productsData }) {
+  const { handelWishList } = useContext(AppContextSlice);
 
   return (
     <>

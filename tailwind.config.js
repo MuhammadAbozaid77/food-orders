@@ -2,7 +2,9 @@
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
+    fontFamily: {},
     extend: {
+      colors: {},
       scale: {
         xx: "1.11",
       },

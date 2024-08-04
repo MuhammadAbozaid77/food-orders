@@ -34,7 +34,7 @@ export default function HomePicSection() {
           </p>
           <button
             onClick={handelNavigate}
-            className="my-3 py-2 text-[25px] rounded-tr-[25px] rounded-bl-[25px] rounded-br-[5px]  rounded-tl-[5px]  bg-red-500 text-white font-bold px-5 shadow hover:bg-red-600 duration-150 "
+            className="my-3 transition-colors py-2 text-[25px] rounded-tr-[25px] rounded-bl-[25px] rounded-br-[5px]  rounded-tl-[5px]  bg-red-500 text-white font-bold px-5 shadow hover:bg-red-600 duration-150 "
           >
             Order Now
           </button>

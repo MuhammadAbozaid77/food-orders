@@ -5,9 +5,9 @@ import { AppContextSlice } from "../../context/AppContext";
 import Loader from "../../components/ui/Loader";
 
 export default function Shop() {
-  const { handelSelectedCat, selectedCategory } = useContext(AppContextSlice);
+  const { productsData, handelSelectedCat, selectedCategory } =
+    useContext(AppContextSlice);
   const [loading, setLoading] = useState(true); // Add a loading state
-
   useEffect(() => {
     const timer = setTimeout(() => {
       handelSelectedCat(selectedCategory);
@@ -27,7 +27,7 @@ export default function Shop() {
         ) : (
           <>
             <Category />
-            <Product />
+            <Product productsData={productsData} />
           </>
         )}
       </div>
