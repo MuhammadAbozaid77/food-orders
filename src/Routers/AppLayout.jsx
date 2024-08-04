@@ -2,7 +2,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import Header from "../components/layouts/header/Header";
 import Footer from "../components/layouts/footer/Footer";
-import UserAuth from "../components/auth/UserAuth";
 import { AppContextSlice } from "../context/AppContext";
 import { useContext, useEffect } from "react";
 import CheckOut from "../pages/cart/components/CheckOut";
@@ -16,7 +15,6 @@ export default function AppLayout() {
   const { pathname } = useLocation();
 
   const {
-    showUserAuth,
     handelShowCheckoutModal,
     showOpenCheckout,
     showSideBar,
@@ -81,14 +79,6 @@ export default function AppLayout() {
             } overflow-y-scroll left-0 right-0 bottom-0 bg-white h-[100vh] duration-700  border-b border-gray-500 shadow z-[1000]`}
           >
             <WhishList setShowWishList={setShowWishList} />
-          </div>
-
-          <div
-            className={`fixed ${
-              showUserAuth ? "top-0" : "-top-[100%]"
-            }  overflow-y-scroll left-0 right-0 bottom-0 bg-white h-[100vh] duration-700 overflow-hidden border-b border-gray-500 shadow z-[1000]`}
-          >
-            <UserAuth />
           </div>
         </div>
       </>

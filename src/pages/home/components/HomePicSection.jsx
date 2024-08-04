@@ -2,6 +2,7 @@
 import { useNavigate } from "react-router-dom";
 import pic44 from "../../../assets/socialmedia/pic44.jpg";
 import { motion, useScroll } from "framer-motion";
+import Container from "../../../components/ui/Container";
 
 export default function HomePicSection() {
   const navigate = useNavigate();
@@ -10,8 +11,8 @@ export default function HomePicSection() {
     navigate("/orders");
   };
   return (
-    <>
-      <div className="w-[100%] lg:px-[100px] md:p-[50px] sm:p-[40px] p-[20px] px-[20px] py-2 flex justify-between items-center lg:h-[450px] h-auto gap-5 lg:flex-row flex-col">
+    <Container>
+      <div className="w-[100%] flex justify-between items-center lg:h-[450px] h-auto gap-5 lg:flex-row flex-col">
         <motion.div
           initial={{ scale: 0.7 }}
           animate={{ scale: 1 }}
@@ -48,6 +49,6 @@ export default function HomePicSection() {
           <img src={pic44} alt="" className="h-[100%]" />
         </motion.div>
       </div>
-    </>
+    </Container>
   );
 }

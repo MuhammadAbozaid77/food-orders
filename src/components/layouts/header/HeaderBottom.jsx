@@ -1,6 +1,6 @@
 //
 import { FaPhone } from "react-icons/fa";
-import { FiUser, FiHeart, FiShoppingBag, FiSearch } from "react-icons/fi";
+import { FiHeart, FiShoppingBag, FiSearch } from "react-icons/fi";
 import { Link, useLocation } from "react-router-dom";
 import { AppContextSlice } from "../../../context/AppContext";
 import { useContext } from "react";
@@ -9,7 +9,6 @@ export default function HeaderBottom() {
   const {
     cartArray,
     setShowSearchPage,
-    handelShowUserAuth,
     setShowWishList,
     wishListArray,
     searchData,
@@ -28,7 +27,7 @@ export default function HeaderBottom() {
         </div>
       </div>
       <div className="w-[200px] h-[50px] bg-white border rounded-full flex justify-center gap-3 items-center shadow">
-        <Link
+        {/* <Link
           // to={""}
           onClick={handelShowUserAuth}
           className={`hover:bg-[#ffca3c] rounded-full duration-150 p-2 ${
@@ -36,7 +35,7 @@ export default function HeaderBottom() {
           }`}
         >
           <FiUser size={20} />
-        </Link>
+        </Link> */}
         <div
           className="hover:bg-[#ffca3c] rounded-full duration-150 p-2 relative"
           onClick={() => setShowWishList(true)}

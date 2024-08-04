@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 export let AppContextSlice = createContext(0);
 
 export default function AppContextProvider({ children }) {
+  // --------------------------------User-------------------------------------------
+  const [userData, setuserData] = useState("");
   // -------------------------------------------------------------------------------
   const [showSideBar, setShowSideBar] = useState(false);
   const [showSearchPage, setShowSearchPage] = useState(false);
@@ -200,6 +202,8 @@ export default function AppContextProvider({ children }) {
           wishListArray,
           setSearchData,
           searchData,
+          userData,
+          setuserData,
         }}
       >
         {children}

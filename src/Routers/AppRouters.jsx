@@ -12,6 +12,8 @@ import Orders from "../pages/orders/Orders";
 import Location from "../pages/location/Location";
 import About from "../pages/about/About";
 import OrderDetails from "../pages/order-details/OrderDetails";
+import RegisterPage from "../pages/auth/RegisterPage";
+import LoginPage from "../pages/auth/LoginPage";
 
 //
 export default function AppRouters() {
@@ -30,6 +32,8 @@ export default function AppRouters() {
           <Route path="location" element={<Location />} />
           <Route path="about" element={<About />} />
         </Route>
+        <Route path="register" element={<RegisterPage />} />
+        <Route path="login" element={<LoginPage />} />
       </Routes>
     </>
   );

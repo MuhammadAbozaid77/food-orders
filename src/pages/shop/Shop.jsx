@@ -2,7 +2,8 @@ import { useContext, useEffect, useState } from "react";
 import Category from "../../components/category/Category";
 import Product from "../../components/product/Product";
 import { AppContextSlice } from "../../context/AppContext";
-import Loader from "../../components/ui/Loader";
+import SpinnerLoading from "../../components/ui/SpinnerLoading";
+import Container from "../../components/ui/Container";
 
 export default function Shop() {
   const { productsData, handelSelectedCat, selectedCategory } =
@@ -19,18 +20,18 @@ export default function Shop() {
 
   return (
     <>
-      <div className="px-[40px] pb-[100px] pt-[30px]">
+      <Container>
         {loading ? (
           <div className="mt-[50px] w-[100%] flex justify-center">
-            <Loader />
+            <SpinnerLoading />
           </div>
         ) : (
-          <>
+          <div className="py-[50px]">
             <Category />
             <Product productsData={productsData} />
-          </>
+          </div>
         )}
-      </div>
+      </Container>
     </>
   );
 }

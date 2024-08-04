@@ -2,6 +2,7 @@
 import pic from "../../../assets/pic1.jpg";
 import pic2 from "../../../assets/pic2.jpg";
 import pic3 from "../../../assets/pic3.jpg";
+import Container from "../../../components/ui/Container";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
@@ -12,7 +13,7 @@ export default function FoodPics() {
 
   return (
     <>
-      <div className="lg:px-[80px] md:px-[50px] sm:px-[30px]  px-[20px]">
+      <Container>
         <div className="flex justify-center items-center bg-slate-200 gap-10 md:p-[50px] sm:p-[40px] p-[20px] flex-wrap rounded-lg my-[50px]">
           <motion.div
             initial={{ scale: 0.7 }}
@@ -101,7 +102,7 @@ export default function FoodPics() {
             </div>
           </motion.div>
         </div>
-      </div>
+      </Container>
     </>
   );
 }
