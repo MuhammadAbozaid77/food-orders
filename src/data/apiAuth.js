@@ -48,5 +48,6 @@ export async function loginFunction(args) {
   }
 }
 export async function logoutFunction() {
+  localStorage.removeItem("UserKey");
   await signOut(appAuth);
 }

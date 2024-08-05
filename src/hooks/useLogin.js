@@ -18,6 +18,7 @@ export default function useLogin() {
     mutationFn: loginFunction,
     onSuccess: (data) => {
       setuserData(data);
+      localStorage.setItem("UserKey", "UserId");
       toast.success("You Are Loged Successfuly");
       navigate("/");
     },

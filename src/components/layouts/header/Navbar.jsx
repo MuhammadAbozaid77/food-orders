@@ -10,6 +10,7 @@ import { logoutFunction } from "../../../data/apiAuth";
 
 export default function Navbar() {
   const { setShowSideBar, userData, setuserData } = useContext(AppContextSlice);
+  const UserKeyCode = localStorage.getItem("UserKey");
 
   const handelLogout = () => {
     logoutFunction();
@@ -26,8 +27,8 @@ export default function Navbar() {
           <NavLink to={""}> Home </NavLink>
           <NavLink to={"/about"}> About </NavLink>
           <NavLink to={"/shop"}> Menu </NavLink>
-          {userData && <NavLink to={"/orders"}> Orders </NavLink>}
-          {userData && <NavLink to={"/location"}> Location </NavLink>}
+          {UserKeyCode && <NavLink to={"/orders"}> Orders </NavLink>}
+          {UserKeyCode && <NavLink to={"/location"}> Location </NavLink>}
           <NavLink to={"/contact"}> Contact </NavLink>
         </ul>
         <ul className="hidden md:flex justify-start items-center gap-5 font-semibold  text-white hover:text-gray-600 uppercase text-[18px] ">

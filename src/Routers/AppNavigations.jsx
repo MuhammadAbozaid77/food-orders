@@ -14,9 +14,10 @@ import About from "../pages/about/About";
 import OrderDetails from "../pages/order-details/OrderDetails";
 import RegisterPage from "../pages/auth/RegisterPage";
 import LoginPage from "../pages/auth/LoginPage";
+import ProtectedRouting from "./ProtectedRouting";
 
 //
-export default function AppRouters() {
+export default function AppNavigations() {
   return (
     <>
       <Routes>
@@ -26,9 +27,30 @@ export default function AppRouters() {
           <Route path="home" element={<Home />} />
           <Route path="shop" element={<Shop />} />
           <Route path="contact" element={<ContactUs />} />
-          <Route path="orders" element={<Orders />} />
-          <Route path="orderdetails/:id" element={<OrderDetails />} />
-          <Route path="cart" element={<Cart />} />
+          <Route
+            path="orders"
+            element={
+              <ProtectedRouting>
+                <Orders />
+              </ProtectedRouting>
+            }
+          />
+          <Route
+            path="orderdetails/:id"
+            element={
+              <ProtectedRouting>
+                <OrderDetails />
+              </ProtectedRouting>
+            }
+          />
+          <Route
+            path="cart"
+            element={
+              <ProtectedRouting>
+                <Cart />
+              </ProtectedRouting>
+            }
+          />
           <Route path="location" element={<Location />} />
           <Route path="about" element={<About />} />
         </Route>
